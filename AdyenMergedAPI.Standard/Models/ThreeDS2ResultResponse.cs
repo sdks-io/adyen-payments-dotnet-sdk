@@ -33,7 +33,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// </summary>
         /// <param name="threeDS2Result">threeDS2Result.</param>
         public ThreeDS2ResultResponse(
-            Models.ThreeDS2Result3 threeDS2Result = null)
+            Models.ThreeDS2Result threeDS2Result = null)
         {
             this.ThreeDS2Result = threeDS2Result;
         }
@@ -42,7 +42,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The result of the 3D Secure 2 authentication.
         /// </summary>
         [JsonProperty("threeDS2Result", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDS2Result3 ThreeDS2Result { get; set; }
+        public Models.ThreeDS2Result ThreeDS2Result { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

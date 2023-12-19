@@ -9,13 +9,18 @@ namespace AdyenMergedAPI.Standard
     public enum Server
     {
         /// <summary>
-        /// Default.
+        /// Payout.
         /// </summary>
-        Default,
+        Payout,
 
         /// <summary>
-        /// Default1.
+        /// Payment.
         /// </summary>
-        Default1,
+        Payment,
+
+        /// <summary>
+        /// Checkout.
+        /// </summary>
+        Checkout,
     }
 }

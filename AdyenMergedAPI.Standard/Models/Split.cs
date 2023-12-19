@@ -37,9 +37,9 @@ namespace AdyenMergedAPI.Standard.Models
         /// <param name="description">description.</param>
         /// <param name="reference">reference.</param>
         public Split(
-            Models.TypeEnum type,
+            Models.Type6Enum type,
             string account = null,
-            Models.SplitAmount2 amount = null,
+            Models.SplitAmount amount = null,
             string description = null,
             string reference = null)
         {
@@ -64,7 +64,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// * Required if `type` is **BalanceAccount**, **Commission**, **Default**, or **VAT** in your [Balance Platform](https://docs.adyen.com/marketplaces-and-platforms) integration.
         /// </summary>
         [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.SplitAmount2 Amount { get; set; }
+        public Models.SplitAmount Amount { get; set; }
 
         /// <summary>
         /// Your description for the split item.
@@ -87,7 +87,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// * [Balance Platform](https://docs.adyen.com/marketplaces-and-platforms): **BalanceAccount**, **Commission**, **Default**, **PaymentFee**, **Remainder**, **Surcharge**, **Tip**, **VAT**.
         /// </summary>
         [JsonProperty("type")]
-        public Models.TypeEnum Type { get; set; }
+        public Models.Type6Enum Type { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

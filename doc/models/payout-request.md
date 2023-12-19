@@ -13,7 +13,7 @@
 | `BillingAddress` | [`Address`](../../doc/models/address.md) | Optional | The address where to send the invoice.<br><br>> The `billingAddress` object is required in the following scenarios. Include all of the fields within this object.<br>> <br>> * For 3D Secure 2 transactions in all browser-based and mobile implementations.<br>> * For cross-border payouts to and from Canada. |
 | `Card` | [`Card`](../../doc/models/card.md) | Optional | A container for card data.<br><br>> Either `bankAccount` or `card` field must be provided in a payment request. |
 | `FraudOffset` | `int?` | Optional | An integer value that is added to the normal fraud score. The value can be either positive or negative. |
-| `FundSource` | [`FundSource11`](../../doc/models/fund-source-11.md) | Optional | The person or entity funding the money. |
+| `FundSource` | [`FundSource1`](../../doc/models/fund-source-1.md) | Optional | The person or entity funding the money. |
 | `MerchantAccount` | `string` | Required | The merchant account identifier, with which you want to process the transaction. |
 | `Recurring` | [`Recurring`](../../doc/models/recurring.md) | Optional | The recurring settings for the payment. Use this property when you want to enable [recurring payments](https://docs.adyen.com/classic-integration/recurring-payments). |
 | `Reference` | `string` | Required | The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.<br>If you need to provide multiple references for a transaction, separate them with hyphens ("-").<br>Maximum length: 80 characters. |

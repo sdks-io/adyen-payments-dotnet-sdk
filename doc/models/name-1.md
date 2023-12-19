@@ -1,7 +1,7 @@
 
 # Name 1
 
-Name of the person.
+The name of the person
 
 ## Structure
 

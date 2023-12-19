@@ -1,6 +1,9 @@
 
 # Device Render Options
 
+Display options for the 3D Secure 2 SDK.
+Optional and only for `deviceChannel` **app**.
+
 ## Structure
 
 `DeviceRenderOptions`

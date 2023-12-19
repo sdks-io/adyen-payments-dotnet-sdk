@@ -1,6 +1,8 @@
 
 # Three DS Requestor Prior Authentication Info
 
+Information about how the 3DS Requestor authenticated the cardholder as part of a previous 3DS transaction.
+
 ## Structure
 
 `ThreeDSRequestorPriorAuthenticationInfo`

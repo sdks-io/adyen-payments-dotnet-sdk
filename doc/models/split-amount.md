@@ -1,6 +1,11 @@
 
 # Split Amount
 
+The amount of the split item.
+
+* Required for all split types in the [Classic Platforms integration](https://docs.adyen.com/marketplaces-and-platforms/classic).
+* Required if `type` is **BalanceAccount**, **Commission**, **Default**, or **VAT** in your [Balance Platform](https://docs.adyen.com/marketplaces-and-platforms) integration.
+
 ## Structure
 
 `SplitAmount`

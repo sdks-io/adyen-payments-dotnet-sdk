@@ -1,7 +1,7 @@
 
 # Amount 6
 
-The interbank amount.
+The sell rate.
 
 ## Structure
 

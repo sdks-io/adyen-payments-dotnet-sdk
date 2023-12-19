@@ -47,13 +47,13 @@ namespace AdyenMergedAPI.Standard.Models
             string authCode = null,
             Models.Amount dccAmount = null,
             string dccSignature = null,
-            Models.FraudResult fraudResult = null,
+            Models.FraudResult2 fraudResult = null,
             string issuerUrl = null,
             string md = null,
             string paRequest = null,
             string pspReference = null,
             string refusalReason = null,
-            Models.ResultCodeEnum? resultCode = null)
+            Models.ResultCode1Enum? resultCode = null)
         {
             this.AdditionalData = additionalData;
             this.AuthCode = authCode;
@@ -100,7 +100,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The fraud result properties of the payment.
         /// </summary>
         [JsonProperty("fraudResult", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.FraudResult FraudResult { get; set; }
+        public Models.FraudResult2 FraudResult { get; set; }
 
         /// <summary>
         /// The URL to direct the shopper to.
@@ -154,7 +154,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// * **Refused** – Indicates the payment was refused. The reason is given in the `refusalReason` field. This is a final state.
         /// </summary>
         [JsonProperty("resultCode", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ResultCodeEnum? ResultCode { get; set; }
+        public Models.ResultCode1Enum? ResultCode { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

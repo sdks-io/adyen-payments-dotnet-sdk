@@ -1,9 +1,7 @@
 
 # Card 3
 
-A container for card data.
-
-> Either `bankAccount` or `card` field must be provided in a payment request.
+The stored card information.
 
 ## Structure
 

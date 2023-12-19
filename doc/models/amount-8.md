@@ -1,7 +1,7 @@
 
 # Amount 8
 
-For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s).
+The balance for the payment method.
 
 ## Structure
 

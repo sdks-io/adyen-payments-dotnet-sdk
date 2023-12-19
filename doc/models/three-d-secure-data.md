@@ -1,6 +1,8 @@
 
 # Three D Secure Data
 
+Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).
+
 ## Structure
 
 `ThreeDSecureData`

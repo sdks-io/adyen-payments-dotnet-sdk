@@ -1,6 +1,8 @@
 
 # Shopper Interaction Device
 
+Shopper interaction device, such as terminal, mobile device or web browser, to initiate payment requests.
+
 ## Structure
 
 `ShopperInteractionDevice`

@@ -1,7 +1,7 @@
 
 # Three DS2 Result 1
 
-Thre ThreeDS2Result that was returned in the final CRes.
+Result of the 3D Secure 2 authentication.
 
 ## Structure
 

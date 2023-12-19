@@ -40,9 +40,9 @@ namespace AdyenMergedAPI.Standard.Models
         public DonationRequest(
             string donationAccount,
             string merchantAccount,
-            Models.Amount3 modificationAmount,
+            Models.Amount modificationAmount,
             string originalReference = null,
-            Models.PlatformChargebackLogic1 platformChargebackLogic = null,
+            Models.PlatformChargebackLogic platformChargebackLogic = null,
             string reference = null)
         {
             this.DonationAccount = donationAccount;
@@ -69,7 +69,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The amount to be donated.The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.
         /// </summary>
         [JsonProperty("modificationAmount")]
-        public Models.Amount3 ModificationAmount { get; set; }
+        public Models.Amount ModificationAmount { get; set; }
 
         /// <summary>
         /// The original pspReference of the payment to modify.
@@ -84,7 +84,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/marketplaces-and-platforms/processing-payments#chargebacks-and-disputes).
         /// </summary>
         [JsonProperty("platformChargebackLogic", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.PlatformChargebackLogic1 PlatformChargebackLogic { get; set; }
+        public Models.PlatformChargebackLogic PlatformChargebackLogic { get; set; }
 
         /// <summary>
         /// Your reference for the payment modification. This reference is visible in Customer Area and in reports.

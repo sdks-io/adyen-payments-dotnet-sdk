@@ -45,9 +45,9 @@ namespace AdyenMergedAPI.Standard.Models
             string merchantAccount,
             string originalReference,
             Dictionary<string, string> additionalData = null,
-            Models.ThreeDSecureData1 mpiData = null,
+            Models.ThreeDSecureData mpiData = null,
             string originalMerchantReference = null,
-            Models.PlatformChargebackLogic1 platformChargebackLogic = null,
+            Models.PlatformChargebackLogic platformChargebackLogic = null,
             string reference = null,
             List<Models.Split> splits = null,
             string tenderReference = null,
@@ -82,7 +82,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).
         /// </summary>
         [JsonProperty("mpiData", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDSecureData1 MpiData { get; set; }
+        public Models.ThreeDSecureData MpiData { get; set; }
 
         /// <summary>
         /// The original merchant reference to cancel.
@@ -103,7 +103,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/marketplaces-and-platforms/processing-payments#chargebacks-and-disputes).
         /// </summary>
         [JsonProperty("platformChargebackLogic", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.PlatformChargebackLogic1 PlatformChargebackLogic { get; set; }
+        public Models.PlatformChargebackLogic PlatformChargebackLogic { get; set; }
 
         /// <summary>
         /// Your reference for the payment modification. This reference is visible in Customer Area and in reports.

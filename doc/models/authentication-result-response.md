@@ -10,7 +10,7 @@
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ThreeDS1Result` | [`ThreeDS1Result2`](../../doc/models/three-ds1-result-2.md) | Optional | The result of the 3D Secure authentication. |
-| `ThreeDS2Result` | [`ThreeDS2Result3`](../../doc/models/three-ds2-result-3.md) | Optional | The result of the 3D Secure 2 authentication. |
+| `ThreeDS2Result` | [`ThreeDS2Result`](../../doc/models/three-ds2-result.md) | Optional | The result of the 3D Secure 2 authentication. |
 
 ## Example (as JSON)
 

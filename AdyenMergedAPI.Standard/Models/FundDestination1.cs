@@ -46,9 +46,9 @@ namespace AdyenMergedAPI.Standard.Models
             Models.Card card = null,
             string selectedRecurringDetailReference = null,
             string shopperEmail = null,
-            Models.Name6 shopperName = null,
+            Models.Name shopperName = null,
             string shopperReference = null,
-            Models.SubMerchant2 subMerchant = null,
+            Models.SubMerchant subMerchant = null,
             string telephoneNumber = null)
         {
             this.AdditionalData = additionalData;
@@ -97,7 +97,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// the name of the person
         /// </summary>
         [JsonProperty("shopperName", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Name6 ShopperName { get; set; }
+        public Models.Name ShopperName { get; set; }
 
         /// <summary>
         /// Required for recurring payments.
@@ -112,7 +112,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Contains the final merchant who will be receiving the money, also known as subMerchant, information.
         /// </summary>
         [JsonProperty("subMerchant", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.SubMerchant2 SubMerchant { get; set; }
+        public Models.SubMerchant SubMerchant { get; set; }
 
         /// <summary>
         /// the telephone number of the person

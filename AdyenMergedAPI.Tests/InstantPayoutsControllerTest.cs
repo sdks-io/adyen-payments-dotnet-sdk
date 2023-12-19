@@ -13,6 +13,7 @@ namespace AdyenMergedAPI.Tests
     using AdyenMergedAPI.Standard.Exceptions;
     using AdyenMergedAPI.Standard.Http.Client;
     using AdyenMergedAPI.Standard.Http.Response;
+    using AdyenMergedAPI.Standard.Models.Containers;
     using AdyenMergedAPI.Standard.Utilities;
     using APIMatic.Core.Utilities;
     using Newtonsoft.Json.Converters;

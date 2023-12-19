@@ -42,7 +42,7 @@ namespace AdyenMergedAPI.Standard.Models
             Models.Address billingAddress = null,
             Models.Card card = null,
             string shopperEmail = null,
-            Models.Name1 shopperName = null,
+            Models.Name shopperName = null,
             string telephoneNumber = null)
         {
             this.AdditionalData = additionalData;
@@ -82,7 +82,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Name of the person.
         /// </summary>
         [JsonProperty("shopperName", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Name1 ShopperName { get; set; }
+        public Models.Name ShopperName { get; set; }
 
         /// <summary>
         /// Phone number of the person

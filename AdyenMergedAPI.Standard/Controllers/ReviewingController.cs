@@ -55,7 +55,7 @@ namespace AdyenMergedAPI.Standard.Controllers
                 Models.ModifyRequest body = null,
                 CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.ModifyResponse>()
-              .Server(Server.Default1)
+              .Server(Server.Payout)
               .RequestBuilder(_requestBuilder => _requestBuilder
                   .Setup(HttpMethod.Post, "/confirmThirdParty")
                   .WithAuth("global")
@@ -91,7 +91,7 @@ namespace AdyenMergedAPI.Standard.Controllers
                 Models.ModifyRequest body = null,
                 CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.ModifyResponse>()
-              .Server(Server.Default1)
+              .Server(Server.Payout)
               .RequestBuilder(_requestBuilder => _requestBuilder
                   .Setup(HttpMethod.Post, "/declineThirdParty")
                   .WithAuth("global")

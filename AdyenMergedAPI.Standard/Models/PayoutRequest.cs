@@ -52,7 +52,7 @@ namespace AdyenMergedAPI.Standard.Models
             Models.Address billingAddress = null,
             Models.Card card = null,
             int? fraudOffset = null,
-            Models.FundSource11 fundSource = null,
+            Models.FundSource1 fundSource = null,
             Models.Recurring recurring = null,
             string selectedRecurringDetailReference = null,
             string shopperEmail = null,
@@ -109,7 +109,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The person or entity funding the money.
         /// </summary>
         [JsonProperty("fundSource", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.FundSource11 FundSource { get; set; }
+        public Models.FundSource1 FundSource { get; set; }
 
         /// <summary>
         /// The merchant account identifier, with which you want to process the transaction.

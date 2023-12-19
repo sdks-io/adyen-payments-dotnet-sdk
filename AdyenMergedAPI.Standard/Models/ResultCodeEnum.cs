@@ -20,87 +20,21 @@ namespace AdyenMergedAPI.Standard.Models
     public enum ResultCodeEnum
     {
         /// <summary>
-        /// AuthenticationFinished.
-        /// </summary>
-        [EnumMember(Value = "AuthenticationFinished")]
-        AuthenticationFinished,
-
-        /// <summary>
-        /// AuthenticationNotRequired.
-        /// </summary>
-        [EnumMember(Value = "AuthenticationNotRequired")]
-        AuthenticationNotRequired,
-
-        /// <summary>
-        /// Authorised.
-        /// </summary>
-        [EnumMember(Value = "Authorised")]
-        Authorised,
-
-        /// <summary>
-        /// Cancelled.
-        /// </summary>
-        [EnumMember(Value = "Cancelled")]
-        Cancelled,
-
-        /// <summary>
-        /// ChallengeShopper.
-        /// </summary>
-        [EnumMember(Value = "ChallengeShopper")]
-        ChallengeShopper,
-
-        /// <summary>
-        /// Error.
-        /// </summary>
-        [EnumMember(Value = "Error")]
-        Error,
-
-        /// <summary>
-        /// IdentifyShopper.
-        /// </summary>
-        [EnumMember(Value = "IdentifyShopper")]
-        IdentifyShopper,
-
-        /// <summary>
-        /// PartiallyAuthorised.
-        /// </summary>
-        [EnumMember(Value = "PartiallyAuthorised")]
-        PartiallyAuthorised,
-
-        /// <summary>
-        /// Pending.
-        /// </summary>
-        [EnumMember(Value = "Pending")]
-        Pending,
-
-        /// <summary>
-        /// PresentToShopper.
-        /// </summary>
-        [EnumMember(Value = "PresentToShopper")]
-        PresentToShopper,
-
-        /// <summary>
-        /// Received.
-        /// </summary>
-        [EnumMember(Value = "Received")]
-        Received,
-
-        /// <summary>
-        /// RedirectShopper.
-        /// </summary>
-        [EnumMember(Value = "RedirectShopper")]
-        RedirectShopper,
-
-        /// <summary>
-        /// Refused.
-        /// </summary>
-        [EnumMember(Value = "Refused")]
-        Refused,
-
-        /// <summary>
         /// Success.
         /// </summary>
         [EnumMember(Value = "Success")]
-        Success
+        Success,
+
+        /// <summary>
+        /// NotEnoughBalance.
+        /// </summary>
+        [EnumMember(Value = "NotEnoughBalance")]
+        NotEnoughBalance,
+
+        /// <summary>
+        /// Failed.
+        /// </summary>
+        [EnumMember(Value = "Failed")]
+        Failed
     }
 }

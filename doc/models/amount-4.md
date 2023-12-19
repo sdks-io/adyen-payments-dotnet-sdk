@@ -1,7 +1,7 @@
 
 # Amount 4
 
-The base amount.
+The buy rate.
 
 ## Structure
 

@@ -1,9 +1,7 @@
 
 # Recurring
 
-A container for the type of recurring contract to be retrieved.
-
-The recurring.contract must be set to `PAYOUT`
+The recurring settings for the payment. Use this property when you want to enable [recurring payments](https://docs.adyen.com/classic-integration/recurring-payments).
 
 ## Structure
 

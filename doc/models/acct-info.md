@@ -1,6 +1,8 @@
 
 # Acct Info
 
+Additional information about the Cardholder’s account provided by the 3DS Requestor.
+
 ## Structure
 
 `AcctInfo`

@@ -1,8 +1,7 @@
 
 # Amount 9
 
-If you want a [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) request to use a non-zero value, assign this value to `additionalAmount` (while the amount must be still set to 0 to trigger BIN or card verification).
-Required to be in the same currency as the `amount`.
+The maximum spendable balance for a single transaction. Applicable to some gift cards.
 
 ## Structure
 

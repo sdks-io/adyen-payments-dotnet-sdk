@@ -12,6 +12,7 @@ namespace AdyenMergedAPI.Tests
     using AdyenMergedAPI.Standard;
     using AdyenMergedAPI.Standard.Http.Client;
     using AdyenMergedAPI.Standard.Models;
+    using AdyenMergedAPI.Standard.Models.Containers;
     using NUnit.Framework;
 
     /// <summary>

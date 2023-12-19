@@ -1,6 +1,10 @@
 
 # Browser Info
 
+The shopper's browser information.
+
+> For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 1.
+
 ## Structure
 
 `BrowserInfo`

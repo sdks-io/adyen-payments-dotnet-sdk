@@ -39,11 +39,11 @@ namespace AdyenMergedAPI.Standard.Models
         /// <param name="shopperInteractionDevice">shopperInteractionDevice.</param>
         public ApplicationInfo(
             Models.CommonField4 adyenLibrary = null,
-            Models.CommonField1 adyenPaymentSource = null,
-            Models.ExternalPlatform2 externalPlatform = null,
+            Models.CommonField adyenPaymentSource = null,
+            Models.ExternalPlatform externalPlatform = null,
             Models.CommonField2 merchantApplication = null,
-            Models.MerchantDevice2 merchantDevice = null,
-            Models.ShopperInteractionDevice2 shopperInteractionDevice = null)
+            Models.MerchantDevice merchantDevice = null,
+            Models.ShopperInteractionDevice shopperInteractionDevice = null)
         {
             this.AdyenLibrary = adyenLibrary;
             this.AdyenPaymentSource = adyenPaymentSource;
@@ -63,13 +63,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// Adyen-developed software to get payment details. For example, Checkout SDK, Secured Fields SDK, etc.
         /// </summary>
         [JsonProperty("adyenPaymentSource", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.CommonField1 AdyenPaymentSource { get; set; }
+        public Models.CommonField AdyenPaymentSource { get; set; }
 
         /// <summary>
         /// Third-party developed platform used to initiate payment requests. For example, Magento, Zuora, etc.
         /// </summary>
         [JsonProperty("externalPlatform", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ExternalPlatform2 ExternalPlatform { get; set; }
+        public Models.ExternalPlatform ExternalPlatform { get; set; }
 
         /// <summary>
         /// Merchant developed software, such as cashier application, used to interact with the Adyen API.
@@ -81,13 +81,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// Merchant device information.
         /// </summary>
         [JsonProperty("merchantDevice", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.MerchantDevice2 MerchantDevice { get; set; }
+        public Models.MerchantDevice MerchantDevice { get; set; }
 
         /// <summary>
         /// Shopper interaction device, such as terminal, mobile device or web browser, to initiate payment requests.
         /// </summary>
         [JsonProperty("shopperInteractionDevice", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ShopperInteractionDevice2 ShopperInteractionDevice { get; set; }
+        public Models.ShopperInteractionDevice ShopperInteractionDevice { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

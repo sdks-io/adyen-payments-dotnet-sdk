@@ -1,9 +1,9 @@
 
 # Bank Account
 
-A container for bank account data.
+The details of the bank account, from which the payment should be made.
 
-> This field is mandatory if `card` is not provided.
+> Either `bankAccount` or `card` field must be provided in a payment request.
 
 ## Structure
 

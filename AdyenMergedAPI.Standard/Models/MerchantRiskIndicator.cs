@@ -51,7 +51,7 @@ namespace AdyenMergedAPI.Standard.Models
             string deliveryEmail = null,
             string deliveryEmailAddress = null,
             Models.DeliveryTimeframeEnum? deliveryTimeframe = null,
-            Models.Amount8 giftCardAmount = null,
+            Models.Amount7 giftCardAmount = null,
             int? giftCardCount = null,
             string giftCardCurr = null,
             DateTime? preOrderDate = null,
@@ -124,7 +124,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s).
         /// </summary>
         [JsonProperty("giftCardAmount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount8 GiftCardAmount { get; set; }
+        public Models.Amount7 GiftCardAmount { get; set; }
 
         /// <summary>
         /// For prepaid or gift card purchase, total count of individual prepaid or gift cards/codes purchased.

@@ -45,15 +45,15 @@ namespace AdyenMergedAPI.Standard.Models
         public PaymentResult(
             Dictionary<string, string> additionalData = null,
             string authCode = null,
-            Models.Amount15 dccAmount = null,
+            Models.Amount dccAmount = null,
             string dccSignature = null,
-            Models.FraudResult fraudResult = null,
+            Models.FraudResult2 fraudResult = null,
             string issuerUrl = null,
             string md = null,
             string paRequest = null,
             string pspReference = null,
             string refusalReason = null,
-            Models.ResultCodeEnum? resultCode = null)
+            Models.ResultCode1Enum? resultCode = null)
         {
             this.AdditionalData = additionalData;
             this.AuthCode = authCode;
@@ -87,7 +87,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// > This value only applies if you have implemented Dynamic Currency Conversion. For more information, [contact Support](https://www.adyen.help/hc/en-us/requests/new).
         /// </summary>
         [JsonProperty("dccAmount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount15 DccAmount { get; set; }
+        public Models.Amount DccAmount { get; set; }
 
         /// <summary>
         /// Cryptographic signature used to verify `dccQuote`.
@@ -100,7 +100,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The fraud result properties of the payment.
         /// </summary>
         [JsonProperty("fraudResult", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.FraudResult FraudResult { get; set; }
+        public Models.FraudResult2 FraudResult { get; set; }
 
         /// <summary>
         /// The URL to direct the shopper to.
@@ -154,7 +154,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// * **Refused** – Indicates the payment was refused. The reason is given in the `refusalReason` field. This is a final state.
         /// </summary>
         [JsonProperty("resultCode", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ResultCodeEnum? ResultCode { get; set; }
+        public Models.ResultCode1Enum? ResultCode { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

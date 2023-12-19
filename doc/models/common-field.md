@@ -1,6 +1,8 @@
 
 # Common Field
 
+Adyen-developed software to get payment details. For example, Checkout SDK, Secured Fields SDK, etc.
+
 ## Structure
 
 `CommonField`

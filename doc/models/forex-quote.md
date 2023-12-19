@@ -11,12 +11,12 @@
 |  --- | --- | --- | --- |
 | `Account` | `string` | Optional | The account name. |
 | `AccountType` | `string` | Optional | The account type. |
-| `BaseAmount` | [`Amount4`](../../doc/models/amount-4.md) | Optional | The base amount. |
+| `BaseAmount` | [`Amount3`](../../doc/models/amount-3.md) | Optional | The base amount. |
 | `BasePoints` | `int` | Required | The base points. |
-| `Buy` | [`Amount5`](../../doc/models/amount-5.md) | Optional | The buy rate. |
-| `Interbank` | [`Amount6`](../../doc/models/amount-6.md) | Optional | The interbank amount. |
+| `Buy` | [`Amount4`](../../doc/models/amount-4.md) | Optional | The buy rate. |
+| `Interbank` | [`Amount5`](../../doc/models/amount-5.md) | Optional | The interbank amount. |
 | `Reference` | `string` | Optional | The reference assigned to the forex quote request. |
-| `Sell` | [`Amount7`](../../doc/models/amount-7.md) | Optional | The sell rate. |
+| `Sell` | [`Amount6`](../../doc/models/amount-6.md) | Optional | The sell rate. |
 | `Signature` | `string` | Optional | The signature to validate the integrity. |
 | `Source` | `string` | Optional | The source of the forex quote. |
 | `Type` | `string` | Optional | The type of forex. |

@@ -1,8 +1,6 @@
 
 # Forex Quote 1
 
-The forex quote as returned in the response of the forex service.
-
 ## Structure
 
 `ForexQuote1`
@@ -13,12 +11,12 @@ The forex quote as returned in the response of the forex service.
 |  --- | --- | --- | --- |
 | `Account` | `string` | Optional | The account name. |
 | `AccountType` | `string` | Optional | The account type. |
-| `BaseAmount` | [`Amount4`](../../doc/models/amount-4.md) | Optional | The base amount. |
+| `BaseAmount` | [`Amount`](../../doc/models/amount.md) | Optional | The base amount. |
 | `BasePoints` | `int` | Required | The base points. |
-| `Buy` | [`Amount5`](../../doc/models/amount-5.md) | Optional | The buy rate. |
-| `Interbank` | [`Amount6`](../../doc/models/amount-6.md) | Optional | The interbank amount. |
+| `Buy` | [`Amount`](../../doc/models/amount.md) | Optional | The buy rate. |
+| `Interbank` | [`Amount`](../../doc/models/amount.md) | Optional | The interbank amount. |
 | `Reference` | `string` | Optional | The reference assigned to the forex quote request. |
-| `Sell` | [`Amount7`](../../doc/models/amount-7.md) | Optional | The sell rate. |
+| `Sell` | [`Amount`](../../doc/models/amount.md) | Optional | The sell rate. |
 | `Signature` | `string` | Optional | The signature to validate the integrity. |
 | `Source` | `string` | Optional | The source of the forex quote. |
 | `Type` | `string` | Optional | The type of forex. |

@@ -12,6 +12,7 @@ namespace AdyenMergedAPI.Standard.Models
     using System.Threading.Tasks;
     using APIMatic.Core.Utilities.Converters;
     using AdyenMergedAPI.Standard;
+    using AdyenMergedAPI.Standard.Models.Containers;
     using AdyenMergedAPI.Standard.Utilities;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
@@ -33,27 +34,38 @@ namespace AdyenMergedAPI.Standard.Models
         /// </summary>
         /// <param name="amount">amount.</param>
         /// <param name="merchantAccount">merchantAccount.</param>
+        /// <param name="paymentMethod">paymentMethod.</param>
         /// <param name="reference">reference.</param>
+        /// <param name="returnUrl">returnUrl.</param>
         /// <param name="accountInfo">accountInfo.</param>
         /// <param name="additionalAmount">additionalAmount.</param>
         /// <param name="additionalData">additionalData.</param>
         /// <param name="applicationInfo">applicationInfo.</param>
-        /// <param name="bankAccount">bankAccount.</param>
+        /// <param name="authenticationData">authenticationData.</param>
         /// <param name="billingAddress">billingAddress.</param>
         /// <param name="browserInfo">browserInfo.</param>
         /// <param name="captureDelayHours">captureDelayHours.</param>
-        /// <param name="card">card.</param>
+        /// <param name="channel">channel.</param>
+        /// <param name="checkoutAttemptId">checkoutAttemptId.</param>
+        /// <param name="company">company.</param>
+        /// <param name="conversionId">conversionId.</param>
+        /// <param name="countryCode">countryCode.</param>
         /// <param name="dateOfBirth">dateOfBirth.</param>
         /// <param name="dccQuote">dccQuote.</param>
+        /// <param name="deliverAt">deliverAt.</param>
         /// <param name="deliveryAddress">deliveryAddress.</param>
         /// <param name="deliveryDate">deliveryDate.</param>
         /// <param name="deviceFingerprint">deviceFingerprint.</param>
+        /// <param name="enableOneClick">enableOneClick.</param>
+        /// <param name="enablePayOut">enablePayOut.</param>
+        /// <param name="enableRecurring">enableRecurring.</param>
         /// <param name="entityType">entityType.</param>
         /// <param name="fraudOffset">fraudOffset.</param>
-        /// <param name="fundDestination">fundDestination.</param>
-        /// <param name="fundSource">fundSource.</param>
-        /// <param name="fundingSource">fundingSource.</param>
+        /// <param name="fundOrigin">fundOrigin.</param>
+        /// <param name="fundRecipient">fundRecipient.</param>
+        /// <param name="industryUsage">industryUsage.</param>
         /// <param name="installments">installments.</param>
+        /// <param name="lineItems">lineItems.</param>
         /// <param name="localizedShopperStatement">localizedShopperStatement.</param>
         /// <param name="mandate">mandate.</param>
         /// <param name="mcc">mcc.</param>
@@ -61,14 +73,17 @@ namespace AdyenMergedAPI.Standard.Models
         /// <param name="merchantRiskIndicator">merchantRiskIndicator.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="mpiData">mpiData.</param>
-        /// <param name="nationality">nationality.</param>
+        /// <param name="order">order.</param>
         /// <param name="orderReference">orderReference.</param>
+        /// <param name="origin">origin.</param>
         /// <param name="platformChargebackLogic">platformChargebackLogic.</param>
-        /// <param name="recurring">recurring.</param>
+        /// <param name="recurringExpiry">recurringExpiry.</param>
+        /// <param name="recurringFrequency">recurringFrequency.</param>
         /// <param name="recurringProcessingModel">recurringProcessingModel.</param>
-        /// <param name="selectedBrand">selectedBrand.</param>
-        /// <param name="selectedRecurringDetailReference">selectedRecurringDetailReference.</param>
-        /// <param name="sessionId">sessionId.</param>
+        /// <param name="redirectFromIssuerMethod">redirectFromIssuerMethod.</param>
+        /// <param name="redirectToIssuerMethod">redirectToIssuerMethod.</param>
+        /// <param name="riskData">riskData.</param>
+        /// <param name="sessionValidity">sessionValidity.</param>
         /// <param name="shopperEmail">shopperEmail.</param>
         /// <param name="shopperIP">shopperIP.</param>
         /// <param name="shopperInteraction">shopperInteraction.</param>
@@ -79,64 +94,78 @@ namespace AdyenMergedAPI.Standard.Models
         /// <param name="socialSecurityNumber">socialSecurityNumber.</param>
         /// <param name="splits">splits.</param>
         /// <param name="store">store.</param>
+        /// <param name="storePaymentMethod">storePaymentMethod.</param>
         /// <param name="telephoneNumber">telephoneNumber.</param>
         /// <param name="threeDS2RequestData">threeDS2RequestData.</param>
         /// <param name="threeDSAuthenticationOnly">threeDSAuthenticationOnly.</param>
-        /// <param name="totalsGroup">totalsGroup.</param>
         /// <param name="trustedShopper">trustedShopper.</param>
         public PaymentRequest(
-            Models.Amount amount,
+            Models.Amount2 amount,
             string merchantAccount,
+            PaymentRequestPaymentMethod paymentMethod,
             string reference,
-            Models.AccountInfo1 accountInfo = null,
-            Models.Amount9 additionalAmount = null,
+            string returnUrl,
+            Models.AccountInfo accountInfo = null,
+            Models.Amount1 additionalAmount = null,
             Dictionary<string, string> additionalData = null,
-            Models.ApplicationInfo1 applicationInfo = null,
-            Models.BankAccount1 bankAccount = null,
-            Models.Address3 billingAddress = null,
-            Models.BrowserInfo1 browserInfo = null,
+            Models.ApplicationInfo applicationInfo = null,
+            Models.AuthenticationData3 authenticationData = null,
+            Models.BillingAddress4 billingAddress = null,
+            Models.BrowserInfo browserInfo = null,
             int? captureDelayHours = null,
-            Models.Card3 card = null,
+            Models.Channel2Enum? channel = null,
+            string checkoutAttemptId = null,
+            Models.Company1 company = null,
+            string conversionId = null,
+            string countryCode = null,
             DateTime? dateOfBirth = null,
-            Models.ForexQuote1 dccQuote = null,
-            Models.Address4 deliveryAddress = null,
+            Models.ForexQuote2 dccQuote = null,
+            DateTime? deliverAt = null,
+            Models.DeliveryAddress1 deliveryAddress = null,
             DateTime? deliveryDate = null,
             string deviceFingerprint = null,
+            bool? enableOneClick = null,
+            bool? enablePayOut = null,
+            bool? enableRecurring = null,
             Models.EntityTypeEnum? entityType = null,
             int? fraudOffset = null,
-            Models.FundDestination1 fundDestination = null,
-            Models.FundSource1 fundSource = null,
-            Models.FundingSourceEnum? fundingSource = null,
-            Models.Installments1 installments = null,
+            Models.FundOrigin1 fundOrigin = null,
+            Models.FundRecipient1 fundRecipient = null,
+            Models.IndustryUsage1Enum? industryUsage = null,
+            Models.Installments installments = null,
+            List<Models.LineItem> lineItems = null,
             Dictionary<string, string> localizedShopperStatement = null,
-            Models.Mandate1 mandate = null,
+            Models.Mandate mandate = null,
             string mcc = null,
             string merchantOrderReference = null,
             Models.MerchantRiskIndicator1 merchantRiskIndicator = null,
             Dictionary<string, string> metadata = null,
-            Models.ThreeDSecureData1 mpiData = null,
-            string nationality = null,
+            Models.ThreeDSecureData mpiData = null,
+            Models.EncryptedOrderData2 order = null,
             string orderReference = null,
-            Models.PlatformChargebackLogic1 platformChargebackLogic = null,
-            Models.Recurring1 recurring = null,
+            string origin = null,
+            Models.PlatformChargebackLogic platformChargebackLogic = null,
+            string recurringExpiry = null,
+            string recurringFrequency = null,
             Models.RecurringProcessingModelEnum? recurringProcessingModel = null,
-            string selectedBrand = null,
-            string selectedRecurringDetailReference = null,
-            string sessionId = null,
+            string redirectFromIssuerMethod = null,
+            string redirectToIssuerMethod = null,
+            Models.RiskData4 riskData = null,
+            string sessionValidity = null,
             string shopperEmail = null,
             string shopperIP = null,
             Models.ShopperInteractionEnum? shopperInteraction = null,
             string shopperLocale = null,
-            Models.Name shopperName = null,
+            Models.Name5 shopperName = null,
             string shopperReference = null,
             string shopperStatement = null,
             string socialSecurityNumber = null,
             List<Models.Split> splits = null,
             string store = null,
+            bool? storePaymentMethod = null,
             string telephoneNumber = null,
-            Models.ThreeDS2RequestData1 threeDS2RequestData = null,
+            Models.ThreeDS2RequestFields1 threeDS2RequestData = null,
             bool? threeDSAuthenticationOnly = false,
-            string totalsGroup = null,
             bool? trustedShopper = null)
         {
             this.AccountInfo = accountInfo;
@@ -144,22 +173,31 @@ namespace AdyenMergedAPI.Standard.Models
             this.AdditionalData = additionalData;
             this.Amount = amount;
             this.ApplicationInfo = applicationInfo;
-            this.BankAccount = bankAccount;
+            this.AuthenticationData = authenticationData;
             this.BillingAddress = billingAddress;
             this.BrowserInfo = browserInfo;
             this.CaptureDelayHours = captureDelayHours;
-            this.Card = card;
+            this.Channel = channel;
+            this.CheckoutAttemptId = checkoutAttemptId;
+            this.Company = company;
+            this.ConversionId = conversionId;
+            this.CountryCode = countryCode;
             this.DateOfBirth = dateOfBirth;
             this.DccQuote = dccQuote;
+            this.DeliverAt = deliverAt;
             this.DeliveryAddress = deliveryAddress;
             this.DeliveryDate = deliveryDate;
             this.DeviceFingerprint = deviceFingerprint;
+            this.EnableOneClick = enableOneClick;
+            this.EnablePayOut = enablePayOut;
+            this.EnableRecurring = enableRecurring;
             this.EntityType = entityType;
             this.FraudOffset = fraudOffset;
-            this.FundDestination = fundDestination;
-            this.FundSource = fundSource;
-            this.FundingSource = fundingSource;
+            this.FundOrigin = fundOrigin;
+            this.FundRecipient = fundRecipient;
+            this.IndustryUsage = industryUsage;
             this.Installments = installments;
+            this.LineItems = lineItems;
             this.LocalizedShopperStatement = localizedShopperStatement;
             this.Mandate = mandate;
             this.Mcc = mcc;
@@ -168,15 +206,20 @@ namespace AdyenMergedAPI.Standard.Models
             this.MerchantRiskIndicator = merchantRiskIndicator;
             this.Metadata = metadata;
             this.MpiData = mpiData;
-            this.Nationality = nationality;
+            this.Order = order;
             this.OrderReference = orderReference;
+            this.Origin = origin;
+            this.PaymentMethod = paymentMethod;
             this.PlatformChargebackLogic = platformChargebackLogic;
-            this.Recurring = recurring;
+            this.RecurringExpiry = recurringExpiry;
+            this.RecurringFrequency = recurringFrequency;
             this.RecurringProcessingModel = recurringProcessingModel;
+            this.RedirectFromIssuerMethod = redirectFromIssuerMethod;
+            this.RedirectToIssuerMethod = redirectToIssuerMethod;
             this.Reference = reference;
-            this.SelectedBrand = selectedBrand;
-            this.SelectedRecurringDetailReference = selectedRecurringDetailReference;
-            this.SessionId = sessionId;
+            this.ReturnUrl = returnUrl;
+            this.RiskData = riskData;
+            this.SessionValidity = sessionValidity;
             this.ShopperEmail = shopperEmail;
             this.ShopperIP = shopperIP;
             this.ShopperInteraction = shopperInteraction;
@@ -187,10 +230,10 @@ namespace AdyenMergedAPI.Standard.Models
             this.SocialSecurityNumber = socialSecurityNumber;
             this.Splits = splits;
             this.Store = store;
+            this.StorePaymentMethod = storePaymentMethod;
             this.TelephoneNumber = telephoneNumber;
             this.ThreeDS2RequestData = threeDS2RequestData;
             this.ThreeDSAuthenticationOnly = threeDSAuthenticationOnly;
-            this.TotalsGroup = totalsGroup;
             this.TrustedShopper = trustedShopper;
         }
 
@@ -199,14 +242,14 @@ namespace AdyenMergedAPI.Standard.Models
         /// > For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.
         /// </summary>
         [JsonProperty("accountInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.AccountInfo1 AccountInfo { get; set; }
+        public Models.AccountInfo AccountInfo { get; set; }
 
         /// <summary>
         /// If you want a [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) request to use a non-zero value, assign this value to `additionalAmount` (while the amount must be still set to 0 to trigger BIN or card verification).
         /// Required to be in the same currency as the `amount`.
         /// </summary>
         [JsonProperty("additionalAmount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount9 AdditionalAmount { get; set; }
+        public Models.Amount1 AdditionalAmount { get; set; }
 
         /// <summary>
         /// This field contains additional data, which may be required for a particular payment request.
@@ -219,20 +262,19 @@ namespace AdyenMergedAPI.Standard.Models
         /// The amount information for the transaction (in [minor units](https://docs.adyen.com/development-resources/currency-codes)). For [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) requests, set amount to 0 (zero).
         /// </summary>
         [JsonProperty("amount")]
-        public Models.Amount Amount { get; set; }
+        public Models.Amount2 Amount { get; set; }
 
         /// <summary>
         /// Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions).
         /// </summary>
         [JsonProperty("applicationInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ApplicationInfo1 ApplicationInfo { get; set; }
+        public Models.ApplicationInfo ApplicationInfo { get; set; }
 
         /// <summary>
-        /// The details of the bank account, from which the payment should be made.
-        /// > Either `bankAccount` or `card` field must be provided in a payment request.
+        /// Data for 3DS authentication.
         /// </summary>
-        [JsonProperty("bankAccount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.BankAccount1 BankAccount { get; set; }
+        [JsonProperty("authenticationData", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.AuthenticationData3 AuthenticationData { get; set; }
 
         /// <summary>
         /// The address where to send the invoice.
@@ -241,14 +283,14 @@ namespace AdyenMergedAPI.Standard.Models
         /// >* For cross-border payouts to and from Canada.
         /// </summary>
         [JsonProperty("billingAddress", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address3 BillingAddress { get; set; }
+        public Models.BillingAddress4 BillingAddress { get; set; }
 
         /// <summary>
         /// The shopper's browser information.
         /// > For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 1.
         /// </summary>
         [JsonProperty("browserInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.BrowserInfo1 BrowserInfo { get; set; }
+        public Models.BrowserInfo BrowserInfo { get; set; }
 
         /// <summary>
         /// The delay between the authorisation and scheduled auto-capture, specified in hours.
@@ -257,17 +299,46 @@ namespace AdyenMergedAPI.Standard.Models
         public int? CaptureDelayHours { get; set; }
 
         /// <summary>
-        /// A container for card data.
-        /// > Either `bankAccount` or `card` field must be provided in a payment request.
+        /// The platform where a payment transaction takes place. This field is optional for filtering out payment methods that are only available on specific platforms. If this value is not set, then we will try to infer it from the `sdkVersion` or `token`.
+        /// Possible values:
+        /// * iOS
+        /// * Android
+        /// * Web
         /// </summary>
-        [JsonProperty("card", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Card3 Card { get; set; }
+        [JsonProperty("channel", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.Channel2Enum? Channel { get; set; }
+
+        /// <summary>
+        /// Checkout attempt ID that corresponds to the Id generated by the client SDK for tracking user payment journey.
+        /// </summary>
+        [JsonProperty("checkoutAttemptId", NullValueHandling = NullValueHandling.Ignore)]
+        public string CheckoutAttemptId { get; set; }
+
+        /// <summary>
+        /// Information regarding the company.
+        /// </summary>
+        [JsonProperty("company", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.Company1 Company { get; set; }
+
+        /// <summary>
+        /// Conversion ID that corresponds to the Id generated by the client SDK for tracking user payment journey.
+        /// </summary>
+        [JsonProperty("conversionId", NullValueHandling = NullValueHandling.Ignore)]
+        public string ConversionId { get; set; }
+
+        /// <summary>
+        /// The shopper country.
+        /// Format: [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+        /// Example: NL or DE
+        /// </summary>
+        [JsonProperty("countryCode", NullValueHandling = NullValueHandling.Ignore)]
+        public string CountryCode { get; set; }
 
         /// <summary>
         /// The shopper's date of birth.
         /// Format [ISO-8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DD
         /// </summary>
-        [JsonConverter(typeof(CustomDateTimeConverter), "yyyy'-'MM'-'dd")]
+        [JsonConverter(typeof(IsoDateTimeConverter))]
         [JsonProperty("dateOfBirth", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime? DateOfBirth { get; set; }
 
@@ -275,13 +346,22 @@ namespace AdyenMergedAPI.Standard.Models
         /// The forex quote as returned in the response of the forex service.
         /// </summary>
         [JsonProperty("dccQuote", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ForexQuote1 DccQuote { get; set; }
+        public Models.ForexQuote2 DccQuote { get; set; }
+
+        /// <summary>
+        /// The date and time the purchased goods should be delivered.
+        /// Format [ISO 8601](https://www.w3.org/TR/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZD
+        /// Example: 2017-07-17T13:42:40.428+01:00
+        /// </summary>
+        [JsonConverter(typeof(IsoDateTimeConverter))]
+        [JsonProperty("deliverAt", NullValueHandling = NullValueHandling.Ignore)]
+        public DateTime? DeliverAt { get; set; }
 
         /// <summary>
         /// The address where the purchased goods should be delivered.
         /// </summary>
         [JsonProperty("deliveryAddress", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address4 DeliveryAddress { get; set; }
+        public Models.DeliveryAddress1 DeliveryAddress { get; set; }
 
         /// <summary>
         /// The date and time the purchased goods should be delivered.
@@ -299,6 +379,24 @@ namespace AdyenMergedAPI.Standard.Models
         public string DeviceFingerprint { get; set; }
 
         /// <summary>
+        /// When true and `shopperReference` is provided, the shopper will be asked if the payment details should be stored for future one-click payments.
+        /// </summary>
+        [JsonProperty("enableOneClick", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableOneClick { get; set; }
+
+        /// <summary>
+        /// When true and `shopperReference` is provided, the payment details will be tokenized for payouts.
+        /// </summary>
+        [JsonProperty("enablePayOut", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnablePayOut { get; set; }
+
+        /// <summary>
+        /// When true and `shopperReference` is provided, the payment details will be tokenized for recurring payments.
+        /// </summary>
+        [JsonProperty("enableRecurring", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? EnableRecurring { get; set; }
+
+        /// <summary>
         /// The type of the entity the payment is processed for.
         /// </summary>
         [JsonProperty("entityType", NullValueHandling = NullValueHandling.Ignore)]
@@ -311,28 +409,38 @@ namespace AdyenMergedAPI.Standard.Models
         public int? FraudOffset { get; set; }
 
         /// <summary>
-        /// the person or entity receiving the money
-        /// </summary>
-        [JsonProperty("fundDestination", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.FundDestination1 FundDestination { get; set; }
-
-        /// <summary>
         /// The person or entity funding the money.
         /// </summary>
-        [JsonProperty("fundSource", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.FundSource1 FundSource { get; set; }
+        [JsonProperty("fundOrigin", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.FundOrigin1 FundOrigin { get; set; }
 
         /// <summary>
-        /// The funding source that should be used when multiple sources are available. For Brazilian combo cards, by default the funding source is credit. To use debit, set this value to **debit**.
+        /// the person or entity receiving the money
         /// </summary>
-        [JsonProperty("fundingSource", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.FundingSourceEnum? FundingSource { get; set; }
+        [JsonProperty("fundRecipient", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.FundRecipient1 FundRecipient { get; set; }
+
+        /// <summary>
+        /// The reason for the amount update. Possible values:
+        /// * **delayedCharge**
+        /// * **noShow**
+        /// * **installment**
+        /// </summary>
+        [JsonProperty("industryUsage", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.IndustryUsage1Enum? IndustryUsage { get; set; }
 
         /// <summary>
         /// Contains installment settings. For more information, refer to [Installments](https://docs.adyen.com/payment-methods/cards/credit-card-installments).
         /// </summary>
         [JsonProperty("installments", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Installments1 Installments { get; set; }
+        public Models.Installments Installments { get; set; }
+
+        /// <summary>
+        /// Price and product information about the purchased items, to be included on the invoice sent to the shopper.
+        /// > This field is required for 3x 4x Oney, Affirm, Afterpay, Clearpay, Klarna, Ratepay, and Zip.
+        /// </summary>
+        [JsonProperty("lineItems", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Models.LineItem> LineItems { get; set; }
 
         /// <summary>
         /// The `localizedShopperStatement` field lets you use dynamic values for your shopper statement in a local character set.
@@ -348,7 +456,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The mandate details to initiate recurring transaction.
         /// </summary>
         [JsonProperty("mandate", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Mandate1 Mandate { get; set; }
+        public Models.Mandate Mandate { get; set; }
 
         /// <summary>
         /// The [merchant category code](https://en.wikipedia.org/wiki/Merchant_category_code) (MCC) is a four-digit number, which relates to a particular market segment. This code reflects the predominant activity that is conducted by the merchant.
@@ -391,13 +499,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// Authentication data produced by an MPI (Mastercard SecureCode, Visa Secure, or Cartes Bancaires).
         /// </summary>
         [JsonProperty("mpiData", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDSecureData1 MpiData { get; set; }
+        public Models.ThreeDSecureData MpiData { get; set; }
 
         /// <summary>
-        /// The two-character country code of the shopper's nationality.
+        /// The order information required for partial payments.
         /// </summary>
-        [JsonProperty("nationality", NullValueHandling = NullValueHandling.Ignore)]
-        public string Nationality { get; set; }
+        [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.EncryptedOrderData2 Order { get; set; }
 
         /// <summary>
         /// When you are doing multiple partial (gift card) payments, this is the `pspReference` of the first payment. We use this to link the multiple payments to each other. As your own reference for linking multiple payments, use the `merchantOrderReference`instead.
@@ -406,16 +514,35 @@ namespace AdyenMergedAPI.Standard.Models
         public string OrderReference { get; set; }
 
         /// <summary>
+        /// Required for the 3D Secure 2 `channel` **Web** integration.
+        /// Set this parameter to the origin URL of the page that you are loading the 3D Secure Component from.
+        /// </summary>
+        [JsonProperty("origin", NullValueHandling = NullValueHandling.Ignore)]
+        public string Origin { get; set; }
+
+        /// <summary>
+        /// The type and required details of a payment method to use.
+        /// </summary>
+        [JsonProperty("paymentMethod")]
+        public PaymentRequestPaymentMethod PaymentMethod { get; set; }
+
+        /// <summary>
         /// Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/marketplaces-and-platforms/processing-payments#chargebacks-and-disputes).
         /// </summary>
         [JsonProperty("platformChargebackLogic", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.PlatformChargebackLogic1 PlatformChargebackLogic { get; set; }
+        public Models.PlatformChargebackLogic PlatformChargebackLogic { get; set; }
 
         /// <summary>
-        /// The recurring settings for the payment. Use this property when you want to enable [recurring payments](https://docs.adyen.com/classic-integration/recurring-payments).
+        /// Date after which no further authorisations shall be performed. Only for 3D Secure 2.
         /// </summary>
-        [JsonProperty("recurring", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Recurring1 Recurring { get; set; }
+        [JsonProperty("recurringExpiry", NullValueHandling = NullValueHandling.Ignore)]
+        public string RecurringExpiry { get; set; }
+
+        /// <summary>
+        /// Minimum number of days between authorisations. Only for 3D Secure 2.
+        /// </summary>
+        [JsonProperty("recurringFrequency", NullValueHandling = NullValueHandling.Ignore)]
+        public string RecurringFrequency { get; set; }
 
         /// <summary>
         /// Defines a recurring payment type. Required when creating a token to store payment details or using stored payment details.
@@ -428,6 +555,18 @@ namespace AdyenMergedAPI.Standard.Models
         public Models.RecurringProcessingModelEnum? RecurringProcessingModel { get; set; }
 
         /// <summary>
+        /// Specifies the redirect method (GET or POST) when redirecting back from the issuer.
+        /// </summary>
+        [JsonProperty("redirectFromIssuerMethod", NullValueHandling = NullValueHandling.Ignore)]
+        public string RedirectFromIssuerMethod { get; set; }
+
+        /// <summary>
+        /// Specifies the redirect method (GET or POST) when redirecting to the issuer.
+        /// </summary>
+        [JsonProperty("redirectToIssuerMethod", NullValueHandling = NullValueHandling.Ignore)]
+        public string RedirectToIssuerMethod { get; set; }
+
+        /// <summary>
         /// The reference to uniquely identify a payment. This reference is used in all communication with you about the payment status. We recommend using a unique value per payment; however, it is not a requirement.
         /// If you need to provide multiple references for a transaction, separate them with hyphens ("-").
         /// Maximum length: 80 characters.
@@ -436,25 +575,30 @@ namespace AdyenMergedAPI.Standard.Models
         public string Reference { get; set; }
 
         /// <summary>
-        /// Some payment methods require defining a value for this field to specify how to process the transaction.
-        /// For the Bancontact payment method, it can be set to:
-        /// * `maestro` (default), to be processed like a Maestro card, or
-        /// * `bcmc`, to be processed like a Bancontact card.
+        /// The URL to return to in case of a redirection.
+        /// The format depends on the channel.
+        /// * For web, include the protocol `http://` or `https://`. You can also include your own additional query parameters, for example, shopper ID or order reference number.
+        /// Example: `https://your-company.com/checkout?shopperOrder=12xy`
+        /// * For iOS, use the custom URL for your app. To know more about setting custom URL schemes, refer to the [Apple Developer documentation](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app).
+        /// Example: `my-app://`
+        /// * For Android, use a custom URL handled by an Activity on your app. You can configure it with an [intent filter](https://developer.android.com/guide/components/intents-filters).
+        /// Example: `my-app://your.package.name`
         /// </summary>
-        [JsonProperty("selectedBrand", NullValueHandling = NullValueHandling.Ignore)]
-        public string SelectedBrand { get; set; }
+        [JsonProperty("returnUrl")]
+        public string ReturnUrl { get; set; }
 
         /// <summary>
-        /// The `recurringDetailReference` you want to use for this payment. The value `LATEST` can be used to select the most recently stored recurring detail.
+        /// Contains risk data, such as client-side data, used to identify risk for a transaction.
         /// </summary>
-        [JsonProperty("selectedRecurringDetailReference", NullValueHandling = NullValueHandling.Ignore)]
-        public string SelectedRecurringDetailReference { get; set; }
+        [JsonProperty("riskData", NullValueHandling = NullValueHandling.Ignore)]
+        public Models.RiskData4 RiskData { get; set; }
 
         /// <summary>
-        /// A session ID used to identify a payment session.
+        /// The date and time until when the session remains valid, in [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format.
+        /// For example: 2020-07-18T15:42:40.428+01:00
         /// </summary>
-        [JsonProperty("sessionId", NullValueHandling = NullValueHandling.Ignore)]
-        public string SessionId { get; set; }
+        [JsonProperty("sessionValidity", NullValueHandling = NullValueHandling.Ignore)]
+        public string SessionValidity { get; set; }
 
         /// <summary>
         /// The shopper's email address. We recommend that you provide this data, as it is used in velocity fraud checks.
@@ -493,7 +637,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The shopper's full name.
         /// </summary>
         [JsonProperty("shopperName", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Name ShopperName { get; set; }
+        public Models.Name5 ShopperName { get; set; }
 
         /// <summary>
         /// Required for recurring payments.
@@ -518,7 +662,7 @@ namespace AdyenMergedAPI.Standard.Models
         public string SocialSecurityNumber { get; set; }
 
         /// <summary>
-        /// An array of objects specifying how the payment should be split when using [Adyen for Platforms](https://docs.adyen.com/marketplaces-and-platforms/processing-payments#providing-split-information) or [Issuing](https://docs.adyen.com/issuing/add-manage-funds#split).
+        /// An array of objects specifying how to split a payment when using [Adyen for Platforms](https://docs.adyen.com/marketplaces-and-platforms/processing-payments#providing-split-information), [Classic Platforms integration](https://docs.adyen.com/marketplaces-and-platforms/classic/processing-payments#providing-split-information), or [Issuing](https://docs.adyen.com/issuing/manage-funds#split).
         /// </summary>
         [JsonProperty("splits", NullValueHandling = NullValueHandling.Ignore)]
         public List<Models.Split> Splits { get; set; }
@@ -532,6 +676,12 @@ namespace AdyenMergedAPI.Standard.Models
         public string Store { get; set; }
 
         /// <summary>
+        /// When true and `shopperReference` is provided, the payment details will be stored.
+        /// </summary>
+        [JsonProperty("storePaymentMethod", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? StorePaymentMethod { get; set; }
+
+        /// <summary>
         /// The shopper's telephone number.
         /// </summary>
         [JsonProperty("telephoneNumber", NullValueHandling = NullValueHandling.Ignore)]
@@ -541,19 +691,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// Request fields for 3D Secure 2. To check if any of the following fields are required for your integration, refer to [Online payments](https://docs.adyen.com/online-payments) or [Classic integration](https://docs.adyen.com/classic-integration) documentation.
         /// </summary>
         [JsonProperty("threeDS2RequestData", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDS2RequestData1 ThreeDS2RequestData { get; set; }
+        public Models.ThreeDS2RequestFields1 ThreeDS2RequestData { get; set; }
 
         /// <summary>
         /// If set to true, you will only perform the [3D Secure 2 authentication](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only), and not the payment authorisation.
         /// </summary>
         [JsonProperty("threeDSAuthenticationOnly", NullValueHandling = NullValueHandling.Ignore)]
         public bool? ThreeDSAuthenticationOnly { get; set; }
-
-        /// <summary>
-        /// The reference value to aggregate sales totals in reporting. When not specified, the store field is used (if available).
-        /// </summary>
-        [JsonProperty("totalsGroup", NullValueHandling = NullValueHandling.Ignore)]
-        public string TotalsGroup { get; set; }
 
         /// <summary>
         /// Set to true if the payment should be routed to a trusted MID.
@@ -588,22 +732,31 @@ namespace AdyenMergedAPI.Standard.Models
                 ((this.AdditionalData == null && other.AdditionalData == null) || (this.AdditionalData?.Equals(other.AdditionalData) == true)) &&
                 ((this.Amount == null && other.Amount == null) || (this.Amount?.Equals(other.Amount) == true)) &&
                 ((this.ApplicationInfo == null && other.ApplicationInfo == null) || (this.ApplicationInfo?.Equals(other.ApplicationInfo) == true)) &&
-                ((this.BankAccount == null && other.BankAccount == null) || (this.BankAccount?.Equals(other.BankAccount) == true)) &&
+                ((this.AuthenticationData == null && other.AuthenticationData == null) || (this.AuthenticationData?.Equals(other.AuthenticationData) == true)) &&
                 ((this.BillingAddress == null && other.BillingAddress == null) || (this.BillingAddress?.Equals(other.BillingAddress) == true)) &&
                 ((this.BrowserInfo == null && other.BrowserInfo == null) || (this.BrowserInfo?.Equals(other.BrowserInfo) == true)) &&
                 ((this.CaptureDelayHours == null && other.CaptureDelayHours == null) || (this.CaptureDelayHours?.Equals(other.CaptureDelayHours) == true)) &&
-                ((this.Card == null && other.Card == null) || (this.Card?.Equals(other.Card) == true)) &&
+                ((this.Channel == null && other.Channel == null) || (this.Channel?.Equals(other.Channel) == true)) &&
+                ((this.CheckoutAttemptId == null && other.CheckoutAttemptId == null) || (this.CheckoutAttemptId?.Equals(other.CheckoutAttemptId) == true)) &&
+                ((this.Company == null && other.Company == null) || (this.Company?.Equals(other.Company) == true)) &&
+                ((this.ConversionId == null && other.ConversionId == null) || (this.ConversionId?.Equals(other.ConversionId) == true)) &&
+                ((this.CountryCode == null && other.CountryCode == null) || (this.CountryCode?.Equals(other.CountryCode) == true)) &&
                 ((this.DateOfBirth == null && other.DateOfBirth == null) || (this.DateOfBirth?.Equals(other.DateOfBirth) == true)) &&
                 ((this.DccQuote == null && other.DccQuote == null) || (this.DccQuote?.Equals(other.DccQuote) == true)) &&
+                ((this.DeliverAt == null && other.DeliverAt == null) || (this.DeliverAt?.Equals(other.DeliverAt) == true)) &&
                 ((this.DeliveryAddress == null && other.DeliveryAddress == null) || (this.DeliveryAddress?.Equals(other.DeliveryAddress) == true)) &&
                 ((this.DeliveryDate == null && other.DeliveryDate == null) || (this.DeliveryDate?.Equals(other.DeliveryDate) == true)) &&
                 ((this.DeviceFingerprint == null && other.DeviceFingerprint == null) || (this.DeviceFingerprint?.Equals(other.DeviceFingerprint) == true)) &&
+                ((this.EnableOneClick == null && other.EnableOneClick == null) || (this.EnableOneClick?.Equals(other.EnableOneClick) == true)) &&
+                ((this.EnablePayOut == null && other.EnablePayOut == null) || (this.EnablePayOut?.Equals(other.EnablePayOut) == true)) &&
+                ((this.EnableRecurring == null && other.EnableRecurring == null) || (this.EnableRecurring?.Equals(other.EnableRecurring) == true)) &&
                 ((this.EntityType == null && other.EntityType == null) || (this.EntityType?.Equals(other.EntityType) == true)) &&
                 ((this.FraudOffset == null && other.FraudOffset == null) || (this.FraudOffset?.Equals(other.FraudOffset) == true)) &&
-                ((this.FundDestination == null && other.FundDestination == null) || (this.FundDestination?.Equals(other.FundDestination) == true)) &&
-                ((this.FundSource == null && other.FundSource == null) || (this.FundSource?.Equals(other.FundSource) == true)) &&
-                ((this.FundingSource == null && other.FundingSource == null) || (this.FundingSource?.Equals(other.FundingSource) == true)) &&
+                ((this.FundOrigin == null && other.FundOrigin == null) || (this.FundOrigin?.Equals(other.FundOrigin) == true)) &&
+                ((this.FundRecipient == null && other.FundRecipient == null) || (this.FundRecipient?.Equals(other.FundRecipient) == true)) &&
+                ((this.IndustryUsage == null && other.IndustryUsage == null) || (this.IndustryUsage?.Equals(other.IndustryUsage) == true)) &&
                 ((this.Installments == null && other.Installments == null) || (this.Installments?.Equals(other.Installments) == true)) &&
+                ((this.LineItems == null && other.LineItems == null) || (this.LineItems?.Equals(other.LineItems) == true)) &&
                 ((this.LocalizedShopperStatement == null && other.LocalizedShopperStatement == null) || (this.LocalizedShopperStatement?.Equals(other.LocalizedShopperStatement) == true)) &&
                 ((this.Mandate == null && other.Mandate == null) || (this.Mandate?.Equals(other.Mandate) == true)) &&
                 ((this.Mcc == null && other.Mcc == null) || (this.Mcc?.Equals(other.Mcc) == true)) &&
@@ -612,15 +765,20 @@ namespace AdyenMergedAPI.Standard.Models
                 ((this.MerchantRiskIndicator == null && other.MerchantRiskIndicator == null) || (this.MerchantRiskIndicator?.Equals(other.MerchantRiskIndicator) == true)) &&
                 ((this.Metadata == null && other.Metadata == null) || (this.Metadata?.Equals(other.Metadata) == true)) &&
                 ((this.MpiData == null && other.MpiData == null) || (this.MpiData?.Equals(other.MpiData) == true)) &&
-                ((this.Nationality == null && other.Nationality == null) || (this.Nationality?.Equals(other.Nationality) == true)) &&
+                ((this.Order == null && other.Order == null) || (this.Order?.Equals(other.Order) == true)) &&
                 ((this.OrderReference == null && other.OrderReference == null) || (this.OrderReference?.Equals(other.OrderReference) == true)) &&
+                ((this.Origin == null && other.Origin == null) || (this.Origin?.Equals(other.Origin) == true)) &&
+                ((this.PaymentMethod == null && other.PaymentMethod == null) || (this.PaymentMethod?.Equals(other.PaymentMethod) == true)) &&
                 ((this.PlatformChargebackLogic == null && other.PlatformChargebackLogic == null) || (this.PlatformChargebackLogic?.Equals(other.PlatformChargebackLogic) == true)) &&
-                ((this.Recurring == null && other.Recurring == null) || (this.Recurring?.Equals(other.Recurring) == true)) &&
+                ((this.RecurringExpiry == null && other.RecurringExpiry == null) || (this.RecurringExpiry?.Equals(other.RecurringExpiry) == true)) &&
+                ((this.RecurringFrequency == null && other.RecurringFrequency == null) || (this.RecurringFrequency?.Equals(other.RecurringFrequency) == true)) &&
                 ((this.RecurringProcessingModel == null && other.RecurringProcessingModel == null) || (this.RecurringProcessingModel?.Equals(other.RecurringProcessingModel) == true)) &&
+                ((this.RedirectFromIssuerMethod == null && other.RedirectFromIssuerMethod == null) || (this.RedirectFromIssuerMethod?.Equals(other.RedirectFromIssuerMethod) == true)) &&
+                ((this.RedirectToIssuerMethod == null && other.RedirectToIssuerMethod == null) || (this.RedirectToIssuerMethod?.Equals(other.RedirectToIssuerMethod) == true)) &&
                 ((this.Reference == null && other.Reference == null) || (this.Reference?.Equals(other.Reference) == true)) &&
-                ((this.SelectedBrand == null && other.SelectedBrand == null) || (this.SelectedBrand?.Equals(other.SelectedBrand) == true)) &&
-                ((this.SelectedRecurringDetailReference == null && other.SelectedRecurringDetailReference == null) || (this.SelectedRecurringDetailReference?.Equals(other.SelectedRecurringDetailReference) == true)) &&
-                ((this.SessionId == null && other.SessionId == null) || (this.SessionId?.Equals(other.SessionId) == true)) &&
+                ((this.ReturnUrl == null && other.ReturnUrl == null) || (this.ReturnUrl?.Equals(other.ReturnUrl) == true)) &&
+                ((this.RiskData == null && other.RiskData == null) || (this.RiskData?.Equals(other.RiskData) == true)) &&
+                ((this.SessionValidity == null && other.SessionValidity == null) || (this.SessionValidity?.Equals(other.SessionValidity) == true)) &&
                 ((this.ShopperEmail == null && other.ShopperEmail == null) || (this.ShopperEmail?.Equals(other.ShopperEmail) == true)) &&
                 ((this.ShopperIP == null && other.ShopperIP == null) || (this.ShopperIP?.Equals(other.ShopperIP) == true)) &&
                 ((this.ShopperInteraction == null && other.ShopperInteraction == null) || (this.ShopperInteraction?.Equals(other.ShopperInteraction) == true)) &&
@@ -631,10 +789,10 @@ namespace AdyenMergedAPI.Standard.Models
                 ((this.SocialSecurityNumber == null && other.SocialSecurityNumber == null) || (this.SocialSecurityNumber?.Equals(other.SocialSecurityNumber) == true)) &&
                 ((this.Splits == null && other.Splits == null) || (this.Splits?.Equals(other.Splits) == true)) &&
                 ((this.Store == null && other.Store == null) || (this.Store?.Equals(other.Store) == true)) &&
+                ((this.StorePaymentMethod == null && other.StorePaymentMethod == null) || (this.StorePaymentMethod?.Equals(other.StorePaymentMethod) == true)) &&
                 ((this.TelephoneNumber == null && other.TelephoneNumber == null) || (this.TelephoneNumber?.Equals(other.TelephoneNumber) == true)) &&
                 ((this.ThreeDS2RequestData == null && other.ThreeDS2RequestData == null) || (this.ThreeDS2RequestData?.Equals(other.ThreeDS2RequestData) == true)) &&
                 ((this.ThreeDSAuthenticationOnly == null && other.ThreeDSAuthenticationOnly == null) || (this.ThreeDSAuthenticationOnly?.Equals(other.ThreeDSAuthenticationOnly) == true)) &&
-                ((this.TotalsGroup == null && other.TotalsGroup == null) || (this.TotalsGroup?.Equals(other.TotalsGroup) == true)) &&
                 ((this.TrustedShopper == null && other.TrustedShopper == null) || (this.TrustedShopper?.Equals(other.TrustedShopper) == true));
         }
         
@@ -649,22 +807,31 @@ namespace AdyenMergedAPI.Standard.Models
             toStringOutput.Add($"AdditionalData = {(this.AdditionalData == null ? "null" : this.AdditionalData.ToString())}");
             toStringOutput.Add($"this.Amount = {(this.Amount == null ? "null" : this.Amount.ToString())}");
             toStringOutput.Add($"this.ApplicationInfo = {(this.ApplicationInfo == null ? "null" : this.ApplicationInfo.ToString())}");
-            toStringOutput.Add($"this.BankAccount = {(this.BankAccount == null ? "null" : this.BankAccount.ToString())}");
+            toStringOutput.Add($"this.AuthenticationData = {(this.AuthenticationData == null ? "null" : this.AuthenticationData.ToString())}");
             toStringOutput.Add($"this.BillingAddress = {(this.BillingAddress == null ? "null" : this.BillingAddress.ToString())}");
             toStringOutput.Add($"this.BrowserInfo = {(this.BrowserInfo == null ? "null" : this.BrowserInfo.ToString())}");
             toStringOutput.Add($"this.CaptureDelayHours = {(this.CaptureDelayHours == null ? "null" : this.CaptureDelayHours.ToString())}");
-            toStringOutput.Add($"this.Card = {(this.Card == null ? "null" : this.Card.ToString())}");
+            toStringOutput.Add($"this.Channel = {(this.Channel == null ? "null" : this.Channel.ToString())}");
+            toStringOutput.Add($"this.CheckoutAttemptId = {(this.CheckoutAttemptId == null ? "null" : this.CheckoutAttemptId)}");
+            toStringOutput.Add($"this.Company = {(this.Company == null ? "null" : this.Company.ToString())}");
+            toStringOutput.Add($"this.ConversionId = {(this.ConversionId == null ? "null" : this.ConversionId)}");
+            toStringOutput.Add($"this.CountryCode = {(this.CountryCode == null ? "null" : this.CountryCode)}");
             toStringOutput.Add($"this.DateOfBirth = {(this.DateOfBirth == null ? "null" : this.DateOfBirth.ToString())}");
             toStringOutput.Add($"this.DccQuote = {(this.DccQuote == null ? "null" : this.DccQuote.ToString())}");
+            toStringOutput.Add($"this.DeliverAt = {(this.DeliverAt == null ? "null" : this.DeliverAt.ToString())}");
             toStringOutput.Add($"this.DeliveryAddress = {(this.DeliveryAddress == null ? "null" : this.DeliveryAddress.ToString())}");
             toStringOutput.Add($"this.DeliveryDate = {(this.DeliveryDate == null ? "null" : this.DeliveryDate.ToString())}");
             toStringOutput.Add($"this.DeviceFingerprint = {(this.DeviceFingerprint == null ? "null" : this.DeviceFingerprint)}");
+            toStringOutput.Add($"this.EnableOneClick = {(this.EnableOneClick == null ? "null" : this.EnableOneClick.ToString())}");
+            toStringOutput.Add($"this.EnablePayOut = {(this.EnablePayOut == null ? "null" : this.EnablePayOut.ToString())}");
+            toStringOutput.Add($"this.EnableRecurring = {(this.EnableRecurring == null ? "null" : this.EnableRecurring.ToString())}");
             toStringOutput.Add($"this.EntityType = {(this.EntityType == null ? "null" : this.EntityType.ToString())}");
             toStringOutput.Add($"this.FraudOffset = {(this.FraudOffset == null ? "null" : this.FraudOffset.ToString())}");
-            toStringOutput.Add($"this.FundDestination = {(this.FundDestination == null ? "null" : this.FundDestination.ToString())}");
-            toStringOutput.Add($"this.FundSource = {(this.FundSource == null ? "null" : this.FundSource.ToString())}");
-            toStringOutput.Add($"this.FundingSource = {(this.FundingSource == null ? "null" : this.FundingSource.ToString())}");
+            toStringOutput.Add($"this.FundOrigin = {(this.FundOrigin == null ? "null" : this.FundOrigin.ToString())}");
+            toStringOutput.Add($"this.FundRecipient = {(this.FundRecipient == null ? "null" : this.FundRecipient.ToString())}");
+            toStringOutput.Add($"this.IndustryUsage = {(this.IndustryUsage == null ? "null" : this.IndustryUsage.ToString())}");
             toStringOutput.Add($"this.Installments = {(this.Installments == null ? "null" : this.Installments.ToString())}");
+            toStringOutput.Add($"this.LineItems = {(this.LineItems == null ? "null" : $"[{string.Join(", ", this.LineItems)} ]")}");
             toStringOutput.Add($"LocalizedShopperStatement = {(this.LocalizedShopperStatement == null ? "null" : this.LocalizedShopperStatement.ToString())}");
             toStringOutput.Add($"this.Mandate = {(this.Mandate == null ? "null" : this.Mandate.ToString())}");
             toStringOutput.Add($"this.Mcc = {(this.Mcc == null ? "null" : this.Mcc)}");
@@ -673,15 +840,20 @@ namespace AdyenMergedAPI.Standard.Models
             toStringOutput.Add($"this.MerchantRiskIndicator = {(this.MerchantRiskIndicator == null ? "null" : this.MerchantRiskIndicator.ToString())}");
             toStringOutput.Add($"Metadata = {(this.Metadata == null ? "null" : this.Metadata.ToString())}");
             toStringOutput.Add($"this.MpiData = {(this.MpiData == null ? "null" : this.MpiData.ToString())}");
-            toStringOutput.Add($"this.Nationality = {(this.Nationality == null ? "null" : this.Nationality)}");
+            toStringOutput.Add($"this.Order = {(this.Order == null ? "null" : this.Order.ToString())}");
             toStringOutput.Add($"this.OrderReference = {(this.OrderReference == null ? "null" : this.OrderReference)}");
+            toStringOutput.Add($"this.Origin = {(this.Origin == null ? "null" : this.Origin)}");
+            toStringOutput.Add($"PaymentMethod = {(this.PaymentMethod == null ? "null" : this.PaymentMethod.ToString())}");
             toStringOutput.Add($"this.PlatformChargebackLogic = {(this.PlatformChargebackLogic == null ? "null" : this.PlatformChargebackLogic.ToString())}");
-            toStringOutput.Add($"this.Recurring = {(this.Recurring == null ? "null" : this.Recurring.ToString())}");
+            toStringOutput.Add($"this.RecurringExpiry = {(this.RecurringExpiry == null ? "null" : this.RecurringExpiry)}");
+            toStringOutput.Add($"this.RecurringFrequency = {(this.RecurringFrequency == null ? "null" : this.RecurringFrequency)}");
             toStringOutput.Add($"this.RecurringProcessingModel = {(this.RecurringProcessingModel == null ? "null" : this.RecurringProcessingModel.ToString())}");
+            toStringOutput.Add($"this.RedirectFromIssuerMethod = {(this.RedirectFromIssuerMethod == null ? "null" : this.RedirectFromIssuerMethod)}");
+            toStringOutput.Add($"this.RedirectToIssuerMethod = {(this.RedirectToIssuerMethod == null ? "null" : this.RedirectToIssuerMethod)}");
             toStringOutput.Add($"this.Reference = {(this.Reference == null ? "null" : this.Reference)}");
-            toStringOutput.Add($"this.SelectedBrand = {(this.SelectedBrand == null ? "null" : this.SelectedBrand)}");
-            toStringOutput.Add($"this.SelectedRecurringDetailReference = {(this.SelectedRecurringDetailReference == null ? "null" : this.SelectedRecurringDetailReference)}");
-            toStringOutput.Add($"this.SessionId = {(this.SessionId == null ? "null" : this.SessionId)}");
+            toStringOutput.Add($"this.ReturnUrl = {(this.ReturnUrl == null ? "null" : this.ReturnUrl)}");
+            toStringOutput.Add($"this.RiskData = {(this.RiskData == null ? "null" : this.RiskData.ToString())}");
+            toStringOutput.Add($"this.SessionValidity = {(this.SessionValidity == null ? "null" : this.SessionValidity)}");
             toStringOutput.Add($"this.ShopperEmail = {(this.ShopperEmail == null ? "null" : this.ShopperEmail)}");
             toStringOutput.Add($"this.ShopperIP = {(this.ShopperIP == null ? "null" : this.ShopperIP)}");
             toStringOutput.Add($"this.ShopperInteraction = {(this.ShopperInteraction == null ? "null" : this.ShopperInteraction.ToString())}");
@@ -692,10 +864,10 @@ namespace AdyenMergedAPI.Standard.Models
             toStringOutput.Add($"this.SocialSecurityNumber = {(this.SocialSecurityNumber == null ? "null" : this.SocialSecurityNumber)}");
             toStringOutput.Add($"this.Splits = {(this.Splits == null ? "null" : $"[{string.Join(", ", this.Splits)} ]")}");
             toStringOutput.Add($"this.Store = {(this.Store == null ? "null" : this.Store)}");
+            toStringOutput.Add($"this.StorePaymentMethod = {(this.StorePaymentMethod == null ? "null" : this.StorePaymentMethod.ToString())}");
             toStringOutput.Add($"this.TelephoneNumber = {(this.TelephoneNumber == null ? "null" : this.TelephoneNumber)}");
             toStringOutput.Add($"this.ThreeDS2RequestData = {(this.ThreeDS2RequestData == null ? "null" : this.ThreeDS2RequestData.ToString())}");
             toStringOutput.Add($"this.ThreeDSAuthenticationOnly = {(this.ThreeDSAuthenticationOnly == null ? "null" : this.ThreeDSAuthenticationOnly.ToString())}");
-            toStringOutput.Add($"this.TotalsGroup = {(this.TotalsGroup == null ? "null" : this.TotalsGroup)}");
             toStringOutput.Add($"this.TrustedShopper = {(this.TrustedShopper == null ? "null" : this.TrustedShopper.ToString())}");
         }
     }

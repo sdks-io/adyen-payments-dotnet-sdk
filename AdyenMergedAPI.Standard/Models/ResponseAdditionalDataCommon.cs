@@ -135,7 +135,7 @@ namespace AdyenMergedAPI.Standard.Models
             string recurringFirstPspReference = null,
             string recurringRecurringDetailReference = null,
             string recurringShopperReference = null,
-            Models.RecurringProcessingModel3Enum? recurringProcessingModel = null,
+            Models.RecurringProcessingModel7Enum? recurringProcessingModel = null,
             string referred = null,
             string refusalReasonRaw = null,
             string requestAmount = null,
@@ -545,7 +545,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The processing model used for the recurring transaction.
         /// </summary>
         [JsonProperty("recurringProcessingModel", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.RecurringProcessingModel3Enum? RecurringProcessingModel { get; set; }
+        public Models.RecurringProcessingModel7Enum? RecurringProcessingModel { get; set; }
 
         /// <summary>
         /// If the payment is referred, this field is set to true.

@@ -1,6 +1,8 @@
 
 # Installments
 
+Contains installment settings. For more information, refer to [Installments](https://docs.adyen.com/payment-methods/cards/credit-card-installments).
+
 ## Structure
 
 `Installments`

@@ -1,6 +1,9 @@
 
 # Sub Merchant
 
+Required for Back-to-Back/ purchase driven load in Wallet transactions.
+Contains the final merchant who will be receiving the money, also known as subMerchant, information.
+
 ## Structure
 
 `SubMerchant`

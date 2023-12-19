@@ -1,6 +1,9 @@
 
 # SDK Ephem Pub Key
 
+The `sdkEphemPubKey` value as received from the 3D Secure 2 SDK.
+Required for `deviceChannel` set to **app**.
+
 ## Structure
 
 `SDKEphemPubKey`

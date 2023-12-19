@@ -80,27 +80,27 @@ namespace AdyenMergedAPI.Standard.Models
             Models.Amount amount,
             string merchantAccount,
             string reference,
-            Models.AccountInfo1 accountInfo = null,
-            Models.Amount9 additionalAmount = null,
+            Models.AccountInfo accountInfo = null,
+            Models.Amount additionalAmount = null,
             Dictionary<string, string> additionalData = null,
-            Models.ApplicationInfo1 applicationInfo = null,
-            Models.Address3 billingAddress = null,
-            Models.BrowserInfo1 browserInfo = null,
+            Models.ApplicationInfo applicationInfo = null,
+            Models.Address billingAddress = null,
+            Models.BrowserInfo browserInfo = null,
             int? captureDelayHours = null,
             DateTime? dateOfBirth = null,
-            Models.ForexQuote1 dccQuote = null,
-            Models.Address4 deliveryAddress = null,
+            Models.ForexQuote11 dccQuote = null,
+            Models.Address deliveryAddress = null,
             DateTime? deliveryDate = null,
             string deviceFingerprint = null,
             int? fraudOffset = null,
-            Models.Installments1 installments = null,
+            Models.Installments installments = null,
             Dictionary<string, string> localizedShopperStatement = null,
             string mcc = null,
             string merchantOrderReference = null,
-            Models.MerchantRiskIndicator1 merchantRiskIndicator = null,
+            Models.MerchantRiskIndicator11 merchantRiskIndicator = null,
             Dictionary<string, string> metadata = null,
             string orderReference = null,
-            Models.Recurring1 recurring = null,
+            Models.Recurring recurring = null,
             Models.RecurringProcessingModelEnum? recurringProcessingModel = null,
             string selectedBrand = null,
             string selectedRecurringDetailReference = null,
@@ -116,8 +116,8 @@ namespace AdyenMergedAPI.Standard.Models
             List<Models.Split> splits = null,
             string store = null,
             string telephoneNumber = null,
-            Models.ThreeDS2RequestData1 threeDS2RequestData = null,
-            Models.ThreeDS2Result1 threeDS2Result = null,
+            Models.ThreeDS2RequestData11 threeDS2RequestData = null,
+            Models.ThreeDS2Result threeDS2Result = null,
             string threeDS2Token = null,
             bool? threeDSAuthenticationOnly = false,
             string totalsGroup = null,
@@ -175,14 +175,14 @@ namespace AdyenMergedAPI.Standard.Models
         /// > For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.
         /// </summary>
         [JsonProperty("accountInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.AccountInfo1 AccountInfo { get; set; }
+        public Models.AccountInfo AccountInfo { get; set; }
 
         /// <summary>
         /// If you want a [BIN or card verification](https://docs.adyen.com/payment-methods/cards/bin-data-and-card-verification) request to use a non-zero value, assign this value to `additionalAmount` (while the amount must be still set to 0 to trigger BIN or card verification).
         /// Required to be in the same currency as the `amount`.
         /// </summary>
         [JsonProperty("additionalAmount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount9 AdditionalAmount { get; set; }
+        public Models.Amount AdditionalAmount { get; set; }
 
         /// <summary>
         /// This field contains additional data, which may be required for a particular payment request.
@@ -201,7 +201,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Information about your application. For more details, see [Building Adyen solutions](https://docs.adyen.com/development-resources/building-adyen-solutions).
         /// </summary>
         [JsonProperty("applicationInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ApplicationInfo1 ApplicationInfo { get; set; }
+        public Models.ApplicationInfo ApplicationInfo { get; set; }
 
         /// <summary>
         /// The address where to send the invoice.
@@ -210,14 +210,14 @@ namespace AdyenMergedAPI.Standard.Models
         /// >* For cross-border payouts to and from Canada.
         /// </summary>
         [JsonProperty("billingAddress", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address3 BillingAddress { get; set; }
+        public Models.Address BillingAddress { get; set; }
 
         /// <summary>
         /// The shopper's browser information.
         /// > For 3D Secure, the full object is required for web integrations. For mobile app integrations, include the `userAgent` and `acceptHeader` fields to indicate  that your integration can support a redirect in case a payment is routed to 3D Secure 1.
         /// </summary>
         [JsonProperty("browserInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.BrowserInfo1 BrowserInfo { get; set; }
+        public Models.BrowserInfo BrowserInfo { get; set; }
 
         /// <summary>
         /// The delay between the authorisation and scheduled auto-capture, specified in hours.
@@ -237,13 +237,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// The forex quote as returned in the response of the forex service.
         /// </summary>
         [JsonProperty("dccQuote", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ForexQuote1 DccQuote { get; set; }
+        public Models.ForexQuote11 DccQuote { get; set; }
 
         /// <summary>
         /// The address where the purchased goods should be delivered.
         /// </summary>
         [JsonProperty("deliveryAddress", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address4 DeliveryAddress { get; set; }
+        public Models.Address DeliveryAddress { get; set; }
 
         /// <summary>
         /// The date and time the purchased goods should be delivered.
@@ -270,7 +270,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Contains installment settings. For more information, refer to [Installments](https://docs.adyen.com/payment-methods/cards/credit-card-installments).
         /// </summary>
         [JsonProperty("installments", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Installments1 Installments { get; set; }
+        public Models.Installments Installments { get; set; }
 
         /// <summary>
         /// The `localizedShopperStatement` field lets you use dynamic values for your shopper statement in a local character set.
@@ -307,7 +307,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// > For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.
         /// </summary>
         [JsonProperty("merchantRiskIndicator", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.MerchantRiskIndicator1 MerchantRiskIndicator { get; set; }
+        public Models.MerchantRiskIndicator11 MerchantRiskIndicator { get; set; }
 
         /// <summary>
         /// Metadata consists of entries, each of which includes a key and a value.
@@ -329,7 +329,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The recurring settings for the payment. Use this property when you want to enable [recurring payments](https://docs.adyen.com/classic-integration/recurring-payments).
         /// </summary>
         [JsonProperty("recurring", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Recurring1 Recurring { get; set; }
+        public Models.Recurring Recurring { get; set; }
 
         /// <summary>
         /// Defines a recurring payment type. Required when creating a token to store payment details or using stored payment details.
@@ -455,13 +455,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// Request fields for 3D Secure 2. To check if any of the following fields are required for your integration, refer to [Online payments](https://docs.adyen.com/online-payments) or [Classic integration](https://docs.adyen.com/classic-integration) documentation.
         /// </summary>
         [JsonProperty("threeDS2RequestData", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDS2RequestData1 ThreeDS2RequestData { get; set; }
+        public Models.ThreeDS2RequestData11 ThreeDS2RequestData { get; set; }
 
         /// <summary>
         /// Thre ThreeDS2Result that was returned in the final CRes.
         /// </summary>
         [JsonProperty("threeDS2Result", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDS2Result1 ThreeDS2Result { get; set; }
+        public Models.ThreeDS2Result ThreeDS2Result { get; set; }
 
         /// <summary>
         /// The ThreeDS2Token that was returned in the /authorise call.

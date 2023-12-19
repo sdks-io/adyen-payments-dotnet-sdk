@@ -31,8 +31,8 @@ namespace AdyenMergedAPI.Standard
         /// <summary>
         /// Gets the URL for a particular alias in the current environment and appends it with template parameters.
         /// </summary>
-        /// <param name="alias">Default value:DEFAULT.</param>
+        /// <param name="alias">Default value:CHECKOUT.</param>
         /// <returns>Returns the baseurl.</returns>
-        string GetBaseUri(Server alias = Server.Default);
+        string GetBaseUri(Server alias = Server.Checkout);
     }
 }

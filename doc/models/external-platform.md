@@ -1,6 +1,8 @@
 
 # External Platform
 
+Third-party developed platform used to initiate payment requests. For example, Magento, Zuora, etc.
+
 ## Structure
 
 `ExternalPlatform`

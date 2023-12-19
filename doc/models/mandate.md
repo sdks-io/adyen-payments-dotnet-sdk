@@ -1,6 +1,8 @@
 
 # Mandate
 
+The mandate details to initiate recurring transaction.
+
 ## Structure
 
 `Mandate`

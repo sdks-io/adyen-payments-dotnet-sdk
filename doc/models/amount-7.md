@@ -1,7 +1,7 @@
 
 # Amount 7
 
-The sell rate.
+For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s).
 
 ## Structure
 

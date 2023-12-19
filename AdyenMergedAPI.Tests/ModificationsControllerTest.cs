@@ -13,6 +13,7 @@ namespace AdyenMergedAPI.Tests
     using AdyenMergedAPI.Standard.Exceptions;
     using AdyenMergedAPI.Standard.Http.Client;
     using AdyenMergedAPI.Standard.Http.Response;
+    using AdyenMergedAPI.Standard.Models.Containers;
     using AdyenMergedAPI.Standard.Utilities;
     using APIMatic.Core.Utilities;
     using Newtonsoft.Json.Converters;
@@ -36,6 +37,59 @@ namespace AdyenMergedAPI.Tests
         public void SetUpDerived()
         {
             this.controller = this.Client.ModificationsController;
+        }
+
+        /// <summary>
+        /// Cancels the authorisation on a payment that has not yet been [captured](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/captures), and returns a unique reference for this request. You get the outcome of the request asynchronously, in a [**TECHNICAL_CANCEL** webhook](https://docs.adyen.com/online-payments/cancel#cancellation-webhook).
+        ///
+        ///If you want to cancel a payment using the [`pspReference`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments__resParam_pspReference), use the [`/payments/{paymentPspReference}/cancels`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/cancels) endpoint instead.
+        ///
+        ///If you want to cancel a payment but are not sure whether it has been captured, use the [`/payments/{paymentPspReference}/reversals`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/payments/{paymentPspReference}/reversals) endpoint instead.
+        ///
+        ///For more information, refer to [Cancel](https://docs.adyen.com/online-payments/cancel)..
+        /// </summary>
+        /// <returns>A <see cref="Task"/> representing the asynchronous unit test.</returns>
+        [Test]
+        public async Task TestTestPostCancels()
+        {
+            // Parameters for the API call
+            string idempotencyKey = "37ca9c97-d1d1-4c62-89e8-706891a563ed";
+            Standard.Models.StandalonePaymentCancelRequest body = ApiHelper.JsonDeserialize<Standard.Models.StandalonePaymentCancelRequest>("{\"paymentReference\":\"YOUR_UNIQUE_REFERENCE_FOR_THE_PAYMENT\",\"reference\":\"YOUR_UNIQUE_REFERENCE_FOR_THE_CANCELLATION\",\"merchantAccount\":\"YOUR_MERCHANT_ACCOUNT\"}");
+
+            // Perform API call
+            Standard.Models.StandalonePaymentCancelResponse result = null;
+            try
+            {
+                result = await this.controller.PostCancelsAsync(idempotencyKey, body);
+            }
+            catch (ApiException)
+            {
+            }
+
+            // Test response code
+            Assert.AreEqual(201, HttpCallBack.Response.StatusCode, "Status should be 201");
+
+            // Test headers
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+            headers.Add("Idempotency-Key", null);
+            headers.Add("Content-Type", "application/json");
+
+            Assert.IsTrue(
+                    TestHelper.AreHeadersProperSubsetOf (
+                    headers,
+                    HttpCallBack.Response.Headers),
+                    "Headers should match");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+            Assert.IsTrue(
+                    TestHelper.IsProperSubsetOf(
+                    "{\"merchantAccount\":\"YOUR_MERCHANT_ACCOUNT\",\"paymentReference\":\"YOUR_UNIQUE_REFERENCE_FOR_THE_PAYMENT\",\"reference\":\"YOUR_UNIQUE_REFERENCE_FOR_THE_CANCELLATION\",\"pspReference\":\"993617894906488A\",\"status\":\"received\"}",
+                    TestHelper.ConvertStreamToString(HttpCallBack.Response.RawBody),
+                    false,
+                    true,
+                    false),
+                    "Response body should have matching keys");
         }
 
         /// <summary>

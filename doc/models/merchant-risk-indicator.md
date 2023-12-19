@@ -14,7 +14,7 @@
 | `DeliveryEmail` | `string` | Optional | The delivery email address (for digital goods). |
 | `DeliveryEmailAddress` | `string` | Optional | For Electronic delivery, the email address to which the merchandise was delivered. Maximum length: 254 characters.<br>**Constraints**: *Maximum Length*: `254` |
 | `DeliveryTimeframe` | [`DeliveryTimeframeEnum?`](../../doc/models/delivery-timeframe-enum.md) | Optional | The estimated delivery time for the shopper to receive the goods.<br>Allowed values:<br><br>* `electronicDelivery`<br>* `sameDayShipping`<br>* `overnightShipping`<br>* `twoOrMoreDaysShipping` |
-| `GiftCardAmount` | [`Amount8`](../../doc/models/amount-8.md) | Optional | For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s). |
+| `GiftCardAmount` | [`Amount7`](../../doc/models/amount-7.md) | Optional | For prepaid or gift card purchase, the purchase amount total of prepaid or gift card(s). |
 | `GiftCardCount` | `int?` | Optional | For prepaid or gift card purchase, total count of individual prepaid or gift cards/codes purchased. |
 | `GiftCardCurr` | `string` | Optional | For prepaid or gift card purchase, [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) three-digit currency code of the gift card, other than those listed in Table A.5 of the EMVCo 3D Secure Protocol and Core Functions Specification. |
 | `PreOrderDate` | `DateTime?` | Optional | For pre-order purchases, the expected date this product will be available to the shopper. |

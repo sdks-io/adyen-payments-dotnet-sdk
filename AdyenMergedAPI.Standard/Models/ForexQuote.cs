@@ -48,11 +48,11 @@ namespace AdyenMergedAPI.Standard.Models
             DateTime validTill,
             string account = null,
             string accountType = null,
-            Models.Amount4 baseAmount = null,
-            Models.Amount5 buy = null,
-            Models.Amount6 interbank = null,
+            Models.Amount3 baseAmount = null,
+            Models.Amount4 buy = null,
+            Models.Amount5 interbank = null,
             string reference = null,
-            Models.Amount7 sell = null,
+            Models.Amount6 sell = null,
             string signature = null,
             string source = null,
             string type = null)
@@ -87,7 +87,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The base amount.
         /// </summary>
         [JsonProperty("baseAmount", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount4 BaseAmount { get; set; }
+        public Models.Amount3 BaseAmount { get; set; }
 
         /// <summary>
         /// The base points.
@@ -99,13 +99,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// The buy rate.
         /// </summary>
         [JsonProperty("buy", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount5 Buy { get; set; }
+        public Models.Amount4 Buy { get; set; }
 
         /// <summary>
         /// The interbank amount.
         /// </summary>
         [JsonProperty("interbank", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount6 Interbank { get; set; }
+        public Models.Amount5 Interbank { get; set; }
 
         /// <summary>
         /// The reference assigned to the forex quote request.
@@ -117,7 +117,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The sell rate.
         /// </summary>
         [JsonProperty("sell", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Amount7 Sell { get; set; }
+        public Models.Amount6 Sell { get; set; }
 
         /// <summary>
         /// The signature to validate the integrity.

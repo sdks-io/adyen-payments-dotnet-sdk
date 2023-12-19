@@ -1,9 +1,7 @@
 
 # Bank Account 1
 
-The details of the bank account, from which the payment should be made.
-
-> Either `bankAccount` or `card` field must be provided in a payment request.
+The stored bank account.
 
 ## Structure
 

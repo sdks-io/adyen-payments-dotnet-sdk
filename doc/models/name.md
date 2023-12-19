@@ -1,7 +1,7 @@
 
 # Name
 
-The shopper's full name.
+Name of the person.
 
 ## Structure
 

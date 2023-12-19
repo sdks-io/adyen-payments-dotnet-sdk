@@ -25,10 +25,19 @@ namespace AdyenMergedAPI.Standard
             new Dictionary<Environment, Dictionary<Enum, string>>
         {
             {
-                Environment.Production, new Dictionary<Enum, string>
+                Environment.Live, new Dictionary<Enum, string>
                 {
-                    { Server.Default, "https://pal-test.adyen.com/pal/servlet/Payment/v68" },
-                    { Server.Default1, "https://pal-test.adyen.com/pal/servlet/Payout/v68" },
+                    { Server.Payout, "https://pal-test.adyen.com/pal/servlet/Payout/v68" },
+                    { Server.Payment, "https://pal-test.adyen.com/pal/servlet/Payment/v68" },
+                    { Server.Checkout, "https://checkout-test.adyen.com/v71" },
+                }
+            },
+            {
+                Environment.Test, new Dictionary<Enum, string>
+                {
+                    { Server.Payout, "https://pal-test.adyen.com/pal/servlet/Payout/v68" },
+                    { Server.Payment, "https://pal-test.adyen.com/pal/servlet/Payment/v68" },
+                    { Server.Checkout, "https://checkout-test.adyen.com/v71" },
                 }
             },
         };
@@ -38,7 +47,12 @@ namespace AdyenMergedAPI.Standard
         private readonly HttpCallBack httpCallBack;
         private readonly BasicAuthManager basicAuthManager;
         private readonly Lazy<PaymentsController> payments;
+        private readonly Lazy<PaymentLinksController> paymentLinks;
         private readonly Lazy<ModificationsController> modifications;
+        private readonly Lazy<RecurringController> recurring;
+        private readonly Lazy<OrdersController> orders;
+        private readonly Lazy<UtilityController> utility;
+        private readonly Lazy<ClassicCheckoutSDKController> classicCheckoutSDK;
         private readonly Lazy<InitializationController> initialization;
         private readonly Lazy<ReviewingController> reviewing;
         private readonly Lazy<InstantPayoutsController> instantPayouts;
@@ -62,7 +76,7 @@ namespace AdyenMergedAPI.Standard
                 })
                 .ApiCallback(httpCallBack)
                 .HttpConfiguration(httpClientConfiguration)
-                .ServerUrls(EnvironmentsMap[environment], Server.Default)
+                .ServerUrls(EnvironmentsMap[environment], Server.Checkout)
                 .Parameters(globalParameter => globalParameter
                     .Header(headerParameter => headerParameter.Setup("X-API-Key", this.XAPIKey))
 )
@@ -72,8 +86,18 @@ namespace AdyenMergedAPI.Standard
 
             this.payments = new Lazy<PaymentsController>(
                 () => new PaymentsController(globalConfiguration));
+            this.paymentLinks = new Lazy<PaymentLinksController>(
+                () => new PaymentLinksController(globalConfiguration));
             this.modifications = new Lazy<ModificationsController>(
                 () => new ModificationsController(globalConfiguration));
+            this.recurring = new Lazy<RecurringController>(
+                () => new RecurringController(globalConfiguration));
+            this.orders = new Lazy<OrdersController>(
+                () => new OrdersController(globalConfiguration));
+            this.utility = new Lazy<UtilityController>(
+                () => new UtilityController(globalConfiguration));
+            this.classicCheckoutSDK = new Lazy<ClassicCheckoutSDKController>(
+                () => new ClassicCheckoutSDKController(globalConfiguration));
             this.initialization = new Lazy<InitializationController>(
                 () => new InitializationController(globalConfiguration));
             this.reviewing = new Lazy<ReviewingController>(
@@ -88,9 +112,34 @@ namespace AdyenMergedAPI.Standard
         public PaymentsController PaymentsController => this.payments.Value;
 
         /// <summary>
+        /// Gets PaymentLinksController controller.
+        /// </summary>
+        public PaymentLinksController PaymentLinksController => this.paymentLinks.Value;
+
+        /// <summary>
         /// Gets ModificationsController controller.
         /// </summary>
         public ModificationsController ModificationsController => this.modifications.Value;
+
+        /// <summary>
+        /// Gets RecurringController controller.
+        /// </summary>
+        public RecurringController RecurringController => this.recurring.Value;
+
+        /// <summary>
+        /// Gets OrdersController controller.
+        /// </summary>
+        public OrdersController OrdersController => this.orders.Value;
+
+        /// <summary>
+        /// Gets UtilityController controller.
+        /// </summary>
+        public UtilityController UtilityController => this.utility.Value;
+
+        /// <summary>
+        /// Gets ClassicCheckoutSDKController controller.
+        /// </summary>
+        public ClassicCheckoutSDKController ClassicCheckoutSDKController => this.classicCheckoutSDK.Value;
 
         /// <summary>
         /// Gets InitializationController controller.
@@ -138,9 +187,9 @@ namespace AdyenMergedAPI.Standard
         /// Gets the URL for a particular alias in the current environment and appends
         /// it with template parameters.
         /// </summary>
-        /// <param name="alias">Default value:DEFAULT.</param>
+        /// <param name="alias">Default value:CHECKOUT.</param>
         /// <returns>Returns the baseurl.</returns>
-        public string GetBaseUri(Server alias = Server.Default)
+        public string GetBaseUri(Server alias = Server.Checkout)
         {
             return globalConfiguration.ServerUrl(alias);
         }
@@ -207,7 +256,7 @@ namespace AdyenMergedAPI.Standard
         public class Builder
         {
             private string xAPIKey = String.Empty;
-            private Environment environment = AdyenMergedAPI.Standard.Environment.Production;
+            private Environment environment = AdyenMergedAPI.Standard.Environment.Live;
             private string basicAuthUserName = "";
             private string basicAuthPassword = "";
             private HttpClientConfiguration.Builder httpClientConfig = new HttpClientConfiguration.Builder();

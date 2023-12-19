@@ -53,7 +53,7 @@
 | `RecurringFirstPspReference` | `string` | Optional | The `pspReference`, of the first recurring payment that created the recurring detail.<br><br>This functionality requires additional configuration on Adyen's end. To enable it, contact the Support Team. |
 | `RecurringRecurringDetailReference` | `string` | Optional | The reference that uniquely identifies the recurring transaction. |
 | `RecurringShopperReference` | `string` | Optional | The provided reference of the shopper for a recurring transaction. |
-| `RecurringProcessingModel` | [`RecurringProcessingModel3Enum?`](../../doc/models/recurring-processing-model-3-enum.md) | Optional | The processing model used for the recurring transaction. |
+| `RecurringProcessingModel` | [`RecurringProcessingModel7Enum?`](../../doc/models/recurring-processing-model-7-enum.md) | Optional | The processing model used for the recurring transaction. |
 | `Referred` | `string` | Optional | If the payment is referred, this field is set to true.<br><br>This field is unavailable if the payment is referred and is usually not returned with ecommerce transactions.<br><br>Example: true |
 | `RefusalReasonRaw` | `string` | Optional | Raw refusal reason received from the acquirer, where available.<br><br>Example: AUTHORISED |
 | `RequestAmount` | `string` | Optional | The amount of the payment request. |

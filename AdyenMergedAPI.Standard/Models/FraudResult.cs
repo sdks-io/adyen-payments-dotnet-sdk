@@ -35,7 +35,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// <param name="results">results.</param>
         public FraudResult(
             int accountScore,
-            List<Models.FraudCheckResultWrapper> results = null)
+            List<Models.FraudCheckResult> results = null)
         {
             this.AccountScore = accountScore;
             this.Results = results;
@@ -51,7 +51,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The result of the individual risk checks.
         /// </summary>
         [JsonProperty("results", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Models.FraudCheckResultWrapper> Results { get; set; }
+        public List<Models.FraudCheckResult> Results { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

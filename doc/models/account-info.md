@@ -1,6 +1,10 @@
 
 # Account Info
 
+Shopper account information for 3D Secure 2.
+
+> For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.
+
 ## Structure
 
 `AccountInfo`

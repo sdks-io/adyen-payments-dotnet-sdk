@@ -15,7 +15,7 @@ The person or entity funding the money.
 | `BillingAddress` | [`Address`](../../doc/models/address.md) | Optional | The address where to send the invoice. |
 | `Card` | [`Card`](../../doc/models/card.md) | Optional | Credit card data.<br><br>Optional if `shopperReference` and `selectedRecurringDetailReference` are provided. |
 | `ShopperEmail` | `string` | Optional | Email address of the person. |
-| `ShopperName` | [`Name1`](../../doc/models/name-1.md) | Optional | Name of the person. |
+| `ShopperName` | [`Name`](../../doc/models/name.md) | Optional | Name of the person. |
 | `TelephoneNumber` | `string` | Optional | Phone number of the person |
 
 ## Example (as JSON)

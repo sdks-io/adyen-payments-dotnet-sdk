@@ -3,15 +3,13 @@
 
 ## Introduction
 
-A set of API endpoints that allow you to initiate, settle, and modify payments on the Adyen payments platform. You can use the API to accept card payments (including One-Click and 3D Secure), bank transfers, ewallets, and many other payment methods.
+Adyen Checkout API provides a simple and flexible way to initiate and authorise online payments. You can use the same integration for payments made with cards (including 3D Secure), mobile wallets, and local payment methods (for example, iDEAL and Sofort).
 
-To learn more about the API, visit [Classic integration](https://docs.adyen.com/classic-integration).
+This API reference provides information on available endpoints and how to interact with them. To learn more about the API, visit [online payments documentation](https://docs.adyen.com/online-payments).
 
 ### Authentication
 
-You need an [API credential](https://docs.adyen.com/development-resources/api-credentials) to authenticate to the API.
-
-If using an API key, add an `X-API-Key` header with the API key as the value, for example:
+Each request to Checkout API must be signed with an API key. For this, [get your API key](https://docs.adyen.com/development-resources/api-credentials#generate-api-key) from your Customer Area, and set this key to the `X-API-Key` header value, for example:
 
 ```
 curl
@@ -20,48 +18,44 @@ curl
 ...
 ```
 
-Alternatively, you can use the username and password to connect to the API using basic authentication, for example:
-
-```
-curl
--U "ws@Company.YOUR_COMPANY_ACCOUNT":"YOUR_BASIC_AUTHENTICATION_PASSWORD" \
--H "Content-Type: application/json" \
-...
-```
-
 ### Versioning
 
-Payments API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: "vXX", where XX is the version number.
+Checkout API supports [versioning](https://docs.adyen.com/development-resources/versioning) using a version suffix in the endpoint URL. This suffix has the following format: "vXX", where XX is the version number.
 
 For example:
 
 ```
-https://pal-test.adyen.com/pal/servlet/Payment/v68/authorise
+https://checkout-test.adyen.com/v71/payments
 ```
 
 ### Going live
 
-To authenticate to the live endpoints, you need an [API credential](https://docs.adyen.com/development-resources/api-credentials) from your live Customer Area.
+To access the live endpoints, you need an API key from your live Customer Area.
 
-The live endpoint URLs contain a prefix which is unique to your company account:
+The live endpoint URLs contain a prefix which is unique to your company account, for example:
 
 ```
-
-https://{PREFIX}-pal-live.adyenpayments.com/pal/servlet/Payment/v68/authorise
+https://{PREFIX}-checkout-live.adyenpayments.com/checkout/v71/payments
 ```
 
 Get your `{PREFIX}` from your live Customer Area under **Developers** > **API URLs** > **Prefix**.
+
+When preparing to do live transactions with Checkout API, follow the [go-live checklist](https://docs.adyen.com/online-payments/go-live-checklist) to make sure you've got all the required configuration in place.
+
+### Release notes
+
+Have a look at the [release notes](https://docs.adyen.com/online-payments/release-notes?integration_type=api&version=71) to find out what changed in this version!
 
 ## Install the Package
 
 If you are building with .NET CLI tools then you can also use the following command:
 
 ```bash
-dotnet add package sdksio.AdyenPaymentsSDK --version 1.0.0
+dotnet add package sdksio.AdyenPaymentsSDK --version 1.0.1
 ```
 
 You can also view the package at:
-https://www.nuget.org/packages/sdksio.AdyenPaymentsSDK/1.0.0
+https://www.nuget.org/packages/sdksio.AdyenPaymentsSDK/1.0.1
 
 ## Test the SDK
 
@@ -69,14 +63,14 @@ The generated SDK also contain one or more Tests, which are contained in the Tes
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
 | `XAPIKey` | `string` | API Key |
-| `Environment` | Environment | The API environment. <br> **Default: `Environment.Production`** |
+| `Environment` | Environment | The API environment. <br> **Default: `Environment.Live`** |
 | `Timeout` | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
 | `BasicAuthUserName` | `string` | The username to use with basic authentication |
 | `BasicAuthPassword` | `string` | The password to use with basic authentication |
@@ -87,9 +81,20 @@ The API client can be initialized as follows:
 AdyenMergedAPI.Standard.AdyenMergedAPIClient client = new AdyenMergedAPI.Standard.AdyenMergedAPIClient.Builder()
     .BasicAuthCredentials("BasicAuthUserName", "BasicAuthPassword")
     .XAPIKey("X-API-Key")
-    .Environment(AdyenMergedAPI.Standard.Environment.Production)
+    .Environment(AdyenMergedAPI.Standard.Environment.Live)
     .Build();
 ```
+
+## Environments
+
+The SDK can be configured to use a different environment for making API calls. Available environments are:
+
+### Fields
+
+| Name | Description |
+|  --- | --- |
+| Live | **Default** |
+| Test | - |
 
 ## Authorization
 
@@ -97,21 +102,26 @@ This API uses `Basic Authentication`.
 
 ## List of APIs
 
-* [Instantpayouts](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/controllers/instantpayouts.md)
-* [Payments](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/controllers/payments.md)
-* [Modifications](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/controllers/modifications.md)
-* [Initialization](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/controllers/initialization.md)
-* [Reviewing](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/controllers/reviewing.md)
+* [Paymentlinks](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/paymentlinks.md)
+* [Classic Checkout SDK](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/classic-checkout-sdk.md)
+* [Instantpayouts](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/instantpayouts.md)
+* [Payments](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/payments.md)
+* [Modifications](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/modifications.md)
+* [Recurring](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/recurring.md)
+* [Orders](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/orders.md)
+* [Utility](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/utility.md)
+* [Initialization](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/initialization.md)
+* [Reviewing](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/controllers/reviewing.md)
 
 ## Classes Documentation
 
-* [Utility Classes](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/utility-classes.md)
-* [HttpRequest](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/http-request.md)
-* [HttpResponse](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/http-response.md)
-* [HttpStringResponse](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/http-string-response.md)
-* [HttpContext](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/http-context.md)
-* [HttpClientConfiguration](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/http-client-configuration.md)
-* [HttpClientConfiguration Builder](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/http-client-configuration-builder.md)
-* [IAuthManager](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/i-auth-manager.md)
-* [ApiException](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.0/doc/api-exception.md)
+* [Utility Classes](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/utility-classes.md)
+* [HttpRequest](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/http-request.md)
+* [HttpResponse](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/http-response.md)
+* [HttpStringResponse](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/http-string-response.md)
+* [HttpContext](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/http-context.md)
+* [HttpClientConfiguration](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/http-client-configuration.md)
+* [HttpClientConfiguration Builder](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/http-client-configuration-builder.md)
+* [IAuthManager](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/i-auth-manager.md)
+* [ApiException](https://www.github.com/sdks-io/adyen-payments-dotnet-sdk/tree/1.0.1/doc/api-exception.md)
 

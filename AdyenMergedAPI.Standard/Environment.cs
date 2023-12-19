@@ -13,9 +13,15 @@ namespace AdyenMergedAPI.Standard
     public enum Environment
     {
         /// <summary>
-        /// Production.
+        /// Live.
         /// </summary>
-        [EnumMember(Value = "production")]
-        Production,
+        [EnumMember(Value = "Live")]
+        Live,
+
+        /// <summary>
+        /// Test.
+        /// </summary>
+        [EnumMember(Value = "Test")]
+        Test,
     }
 }

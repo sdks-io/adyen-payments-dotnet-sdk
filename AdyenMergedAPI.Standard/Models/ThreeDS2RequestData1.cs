@@ -72,19 +72,19 @@ namespace AdyenMergedAPI.Standard.Models
         /// <param name="workPhone">workPhone.</param>
         public ThreeDS2RequestData1(
             string deviceChannel,
-            Models.AcctInfo1 acctInfo = null,
+            Models.AcctInfo acctInfo = null,
             Models.AcctTypeEnum? acctType = null,
             string acquirerBIN = null,
             string acquirerMerchantID = null,
             Models.AddrMatchEnum? addrMatch = null,
             bool? authenticationOnly = false,
             Models.ChallengeIndicatorEnum? challengeIndicator = null,
-            Models.DeviceRenderOptions1 deviceRenderOptions = null,
-            Models.Phone4 homePhone = null,
+            Models.DeviceRenderOptions deviceRenderOptions = null,
+            Models.Phone homePhone = null,
             string mcc = null,
             string merchantName = null,
             string messageVersion = null,
-            Models.Phone1 mobilePhone = null,
+            Models.Phone mobilePhone = null,
             string notificationURL = null,
             bool? payTokenInd = null,
             string paymentAuthenticationUseCase = null,
@@ -93,23 +93,23 @@ namespace AdyenMergedAPI.Standard.Models
             string recurringFrequency = null,
             string sdkAppID = null,
             string sdkEncData = null,
-            Models.SDKEphemPubKey2 sdkEphemPubKey = null,
+            Models.SDKEphemPubKey sdkEphemPubKey = null,
             int? sdkMaxTimeout = 60,
             string sdkReferenceNumber = null,
             string sdkTransID = null,
             string sdkVersion = null,
             string threeDSCompInd = null,
             string threeDSRequestorAuthenticationInd = null,
-            Models.ThreeDSRequestorAuthenticationInfo2 threeDSRequestorAuthenticationInfo = null,
-            Models.ThreeDSRequestorChallengeIndEnum? threeDSRequestorChallengeInd = null,
+            Models.ThreeDSRequestorAuthenticationInfo threeDSRequestorAuthenticationInfo = null,
+            Models.ThreeDSReqAuthMethodEnum? threeDSRequestorChallengeInd = null,
             string threeDSRequestorID = null,
             string threeDSRequestorName = null,
-            Models.ThreeDSRequestorPriorAuthenticationInfo2 threeDSRequestorPriorAuthenticationInfo = null,
+            Models.ThreeDSRequestorPriorAuthenticationInfo threeDSRequestorPriorAuthenticationInfo = null,
             string threeDSRequestorURL = null,
             Models.TransTypeEnum? transType = null,
             Models.TransactionTypeEnum? transactionType = null,
             string whiteListStatus = null,
-            Models.Phone2 workPhone = null)
+            Models.Phone workPhone = null)
         {
             this.AcctInfo = acctInfo;
             this.AcctType = acctType;
@@ -156,7 +156,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Additional information about the Cardholder’s account provided by the 3DS Requestor.
         /// </summary>
         [JsonProperty("acctInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.AcctInfo1 AcctInfo { get; set; }
+        public Models.AcctInfo AcctInfo { get; set; }
 
         /// <summary>
         /// Indicates the type of account. For example, for a multi-account card product. Length: 2 characters. Allowed values:
@@ -218,13 +218,13 @@ namespace AdyenMergedAPI.Standard.Models
         /// Optional and only for `deviceChannel` **app**.
         /// </summary>
         [JsonProperty("deviceRenderOptions", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.DeviceRenderOptions1 DeviceRenderOptions { get; set; }
+        public Models.DeviceRenderOptions DeviceRenderOptions { get; set; }
 
         /// <summary>
         /// The home phone number provided by the Cardholder.
         /// </summary>
         [JsonProperty("homePhone", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Phone4 HomePhone { get; set; }
+        public Models.Phone HomePhone { get; set; }
 
         /// <summary>
         /// Required for merchants that have been enrolled for 3D Secure 2 by another party than Adyen, mostly [authentication-only integrations](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only). The `mcc` is a four-digit code with which the previously given `acquirerMerchantID` is registered at the scheme.
@@ -249,7 +249,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The mobile phone number provided by the Cardholder.
         /// </summary>
         [JsonProperty("mobilePhone", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Phone1 MobilePhone { get; set; }
+        public Models.Phone MobilePhone { get; set; }
 
         /// <summary>
         /// URL to where the issuer should send the `CRes`. Required if you are not using components for `channel` **Web** or if you are using classic integration `deviceChannel` **browser**.
@@ -306,7 +306,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Required for `deviceChannel` set to **app**.
         /// </summary>
         [JsonProperty("sdkEphemPubKey", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.SDKEphemPubKey2 SdkEphemPubKey { get; set; }
+        public Models.SDKEphemPubKey SdkEphemPubKey { get; set; }
 
         /// <summary>
         /// The maximum amount of time in minutes for the 3D Secure 2 authentication process.
@@ -352,7 +352,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Information about how the 3DS Requestor authenticated the cardholder before or during the transaction
         /// </summary>
         [JsonProperty("threeDSRequestorAuthenticationInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDSRequestorAuthenticationInfo2 ThreeDSRequestorAuthenticationInfo { get; set; }
+        public Models.ThreeDSRequestorAuthenticationInfo ThreeDSRequestorAuthenticationInfo { get; set; }
 
         /// <summary>
         /// Indicates whether a challenge is requested for this transaction. Possible values:
@@ -364,7 +364,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// * **06** — Data Only
         /// </summary>
         [JsonProperty("threeDSRequestorChallengeInd", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDSRequestorChallengeIndEnum? ThreeDSRequestorChallengeInd { get; set; }
+        public Models.ThreeDSReqAuthMethodEnum? ThreeDSRequestorChallengeInd { get; set; }
 
         /// <summary>
         /// Required for [authentication-only integration](https://docs.adyen.com/online-payments/3d-secure/other-3ds-flows/authentication-only) for Visa. Unique 3D Secure requestor identifier assigned by the Directory Server when you enrol for 3D Secure 2.
@@ -382,7 +382,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// Information about how the 3DS Requestor authenticated the cardholder as part of a previous 3DS transaction.
         /// </summary>
         [JsonProperty("threeDSRequestorPriorAuthenticationInfo", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.ThreeDSRequestorPriorAuthenticationInfo2 ThreeDSRequestorPriorAuthenticationInfo { get; set; }
+        public Models.ThreeDSRequestorPriorAuthenticationInfo ThreeDSRequestorPriorAuthenticationInfo { get; set; }
 
         /// <summary>
         /// URL of the (customer service) website that will be shown to the shopper in case of technical errors during the 3D Secure 2 process.
@@ -417,7 +417,7 @@ namespace AdyenMergedAPI.Standard.Models
         /// The work phone number provided by the Cardholder.
         /// </summary>
         [JsonProperty("workPhone", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Phone2 WorkPhone { get; set; }
+        public Models.Phone WorkPhone { get; set; }
 
         /// <inheritdoc/>
         public override string ToString()

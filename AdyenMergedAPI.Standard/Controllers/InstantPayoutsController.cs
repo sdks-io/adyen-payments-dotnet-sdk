@@ -53,7 +53,7 @@ namespace AdyenMergedAPI.Standard.Controllers
                 Models.PayoutRequest body = null,
                 CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.PayoutResponse>()
-              .Server(Server.Default1)
+              .Server(Server.Payout)
               .RequestBuilder(_requestBuilder => _requestBuilder
                   .Setup(HttpMethod.Post, "/payout")
                   .WithAuth("global")

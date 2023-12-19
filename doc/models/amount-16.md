@@ -1,7 +1,7 @@
 
 # Amount 16
 
-The amount that needs to be refunded. The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.
+The amount of the payment.
 
 ## Structure
 

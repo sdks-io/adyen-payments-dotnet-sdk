@@ -1,7 +1,7 @@
 
 # Amount 19
 
-The amount that needs to be adjusted. The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.
+The total amount of the order.
 
 ## Structure
 

@@ -1,6 +1,8 @@
 
 # Merchant Device
 
+Merchant device information.
+
 ## Structure
 
 `MerchantDevice`

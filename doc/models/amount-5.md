@@ -1,7 +1,7 @@
 
 # Amount 5
 
-The buy rate.
+The interbank amount.
 
 ## Structure
 

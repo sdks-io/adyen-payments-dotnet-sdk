@@ -20,57 +20,15 @@ namespace AdyenMergedAPI.Standard.Models
     public enum TypeEnum
     {
         /// <summary>
-        /// BalanceAccount.
+        /// Ach.
         /// </summary>
-        [EnumMember(Value = "BalanceAccount")]
-        BalanceAccount,
+        [EnumMember(Value = "ach")]
+        Ach,
 
         /// <summary>
-        /// Commission.
+        /// AchPlaid.
         /// </summary>
-        [EnumMember(Value = "Commission")]
-        Commission,
-
-        /// <summary>
-        /// Default.
-        /// </summary>
-        [EnumMember(Value = "Default")]
-        Default,
-
-        /// <summary>
-        /// MarketPlace.
-        /// </summary>
-        [EnumMember(Value = "MarketPlace")]
-        MarketPlace,
-
-        /// <summary>
-        /// PaymentFee.
-        /// </summary>
-        [EnumMember(Value = "PaymentFee")]
-        PaymentFee,
-
-        /// <summary>
-        /// Remainder.
-        /// </summary>
-        [EnumMember(Value = "Remainder")]
-        Remainder,
-
-        /// <summary>
-        /// Surcharge.
-        /// </summary>
-        [EnumMember(Value = "Surcharge")]
-        Surcharge,
-
-        /// <summary>
-        /// Tip.
-        /// </summary>
-        [EnumMember(Value = "Tip")]
-        Tip,
-
-        /// <summary>
-        /// VAT.
-        /// </summary>
-        [EnumMember(Value = "VAT")]
-        VAT
+        [EnumMember(Value = "ach_plaid")]
+        AchPlaid
     }
 }

@@ -1,6 +1,8 @@
 
 # Platform Chargeback Logic
 
+Defines how to book chargebacks when using [Adyen for Platforms](https://docs.adyen.com/marketplaces-and-platforms/processing-payments#chargebacks-and-disputes).
+
 ## Structure
 
 `PlatformChargebackLogic`

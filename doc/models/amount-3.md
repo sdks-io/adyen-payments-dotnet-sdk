@@ -1,7 +1,7 @@
 
 # Amount 3
 
-The amount to be donated.The `currency` must match the currency used in authorisation, the `value` must be smaller than or equal to the authorised amount.
+The base amount.
 
 ## Structure
 

@@ -1,6 +1,8 @@
 
 # Phone
 
+The mobile phone number provided by the Cardholder.
+
 ## Structure
 
 `Phone`

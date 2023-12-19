@@ -1,6 +1,8 @@
 
 # Three DS2 Result
 
+Thre ThreeDS2Result that was returned in the final CRes.
+
 ## Structure
 
 `ThreeDS2Result`

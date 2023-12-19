@@ -53,7 +53,7 @@ namespace AdyenMergedAPI.Standard.Controllers
                 Models.StoreDetailRequest body = null,
                 CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.StoreDetailResponse>()
-              .Server(Server.Default1)
+              .Server(Server.Payout)
               .RequestBuilder(_requestBuilder => _requestBuilder
                   .Setup(HttpMethod.Post, "/storeDetail")
                   .WithAuth("global")
@@ -89,7 +89,7 @@ namespace AdyenMergedAPI.Standard.Controllers
                 Models.StoreDetailAndSubmitRequest body = null,
                 CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.StoreDetailAndSubmitResponse>()
-              .Server(Server.Default1)
+              .Server(Server.Payout)
               .RequestBuilder(_requestBuilder => _requestBuilder
                   .Setup(HttpMethod.Post, "/storeDetailAndSubmitThirdParty")
                   .WithAuth("global")
@@ -125,7 +125,7 @@ namespace AdyenMergedAPI.Standard.Controllers
                 Models.SubmitRequest body = null,
                 CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.SubmitResponse>()
-              .Server(Server.Default1)
+              .Server(Server.Payout)
               .RequestBuilder(_requestBuilder => _requestBuilder
                   .Setup(HttpMethod.Post, "/submitThirdParty")
                   .WithAuth("global")
